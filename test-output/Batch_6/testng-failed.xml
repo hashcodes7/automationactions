@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Batch_6]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="TimeDate(failed)">
+    <groups>
+      <run>
+        <include name="TimeDate"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="WMS_TimeDate_Batch_6.WMS_Cancel_OLPNs">
+        <methods>
+          <include name="setUp"/>
+          <include name="orderAllocation"/>
+        </methods>
+      </class> <!-- WMS_TimeDate_Batch_6.WMS_Cancel_OLPNs -->
+      <class name="WMS_TimeDate_Batch_6.WMS_Ship_Confirmation">
+        <methods>
+          <include name="setUpend"/>
+          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- WMS_TimeDate_Batch_6.WMS_Ship_Confirmation -->
+      <class name="WMS_TimeDate_Batch_6.WMS_Parcel_End_of_The_Day">
+        <methods>
+          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="setUpend"/>
+        </methods>
+      </class> <!-- WMS_TimeDate_Batch_6.WMS_Parcel_End_of_The_Day -->
+      <class name="WMS_TimeDate_Batch_6.WMS_Fill_and_Kill">
+        <methods>
+          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="setUpend"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- WMS_TimeDate_Batch_6.WMS_Fill_and_Kill -->
+      <class name="WMS_TimeDate_Batch_6.WMS_Alternate_Pick_Location">
+        <methods>
+          <include name="setUp"/>
+          <include name="orderAllocation"/>
+          <include name="setUpend"/>
+        </methods>
+      </class> <!-- WMS_TimeDate_Batch_6.WMS_Alternate_Pick_Location -->
+    </classes>
+  </test> <!-- TimeDate(failed) -->
+</suite> <!-- Failed suite [Batch_6] -->

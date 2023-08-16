@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>TestNG:  Single_Orders</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Single_Orders</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Mar 07 15:44:05 IST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>6511 seconds (6511111 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td>Single_Orders </td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Three.orderAllocation()'><b>orderAllocation</b><br>Test class: WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Three<br>Parameters: SBSO230307144140, 
+SBSO230307144235, Minimum status:Released, Maximum status:Allocated, Status Description:Created, Status:Held For Tasking, Status description:Released, Status:Ready For Assignment, Status:Assigned, TOTSB03, MINDZOP0200237, CARTSB03, Minimum status:Manifested, Minimum status:Shipped, Pack Station 3</td>
+<td></td>
+<td>145</td>
+<td>WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Three@102cec62</td></tr>
+<tr>
+<td title='WMS_SingsOrd_Batch_3.WMS_Single_Export.orderAllocation()'><b>orderAllocation</b><br>Test class: WMS_SingsOrd_Batch_3.WMS_Single_Export<br>Parameters: SEPO230307153850, SEPO230307153946, Minimum status:Released, Maximum status:Allocated, Status Description:Created, Status:Held For Tasking, Status description:Released, Status:Ready For Assignment, Status:Assigned, TOTESB07, MINDZOP0200237, CARTSB07, Minimum status:Manifested, Minimum status:Shipped, Pack Station 1</td>
+<td></td>
+<td>2162</td>
+<td>WMS_SingsOrd_Batch_3.WMS_Single_Export@19976a65</td></tr>
+<tr>
+<td title='WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two.orderAllocation()'><b>orderAllocation</b><br>Test class: WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two<br>Parameters: SBSO230307143840, SBSO230307143959, Minimum status:Released, Maximum status:Allocated, Status Description:Created, Status:Held For Tasking, Status description:Released, Status:Ready For Assignment, Status:Assigned, TOTESB02, MINDZOP0200237, CARTSB02, Minimum status:Manifested, Minimum status:Shipped, Pack Station 2</td>
+<td></td>
+<td>1197</td>
+<td>WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two@56dc1551</td></tr>
+<tr>
+<td title='WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One.orderAllocation()'><b>orderAllocation</b><br>Test class: WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One<br>Parameters: SBSO230307143624, 
+SBSO230307143753, Minimum status:Released, Maximum status:Allocated, Status Description:Created, Status:Held For Tasking, Status description:Released, Status:Ready For Assignment, Status:Assigned, TOTESB01, MINDZOP0200237, CARTSB01, Minimum status:Manifested, Minimum status:Shipped, Pack Station 1</td>
+<td></td>
+<td>175</td>
+<td>WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One@4b2c5e02</td></tr>
+<tr>
+<td title='WMS_SingsOrd_Batch_3.WMS_Single_Bag_GC.orderAllocation()'><b>orderAllocation</b><br>Test class: WMS_SingsOrd_Batch_3.WMS_Single_Bag_GC<br>Parameters: 
+SBCR230307153016, SBCR230307153053, Minimum status:Released, Maximum status:Allocated, Status Description:Created, Status:Held For Tasking, Status description:Released, Status:Ready For Assignment, Status:Assigned, TOTESB04, MINDZOP0200237, CARTSB04, Minimum status:Manifested, Minimum status:Shipped, Pack Station 1</td>
+<td></td>
+<td>66</td>
+<td>WMS_SingsOrd_Batch_3.WMS_Single_Bag_GC@3e62d773</td></tr>
+<tr>
+<td title='WMS_SingsOrd_Batch_3.WMS_Single_Gift_Wrap.orderAllocation()'><b>orderAllocation</b><br>Test class: WMS_SingsOrd_Batch_3.WMS_Single_Gift_Wrap<br>Parameters: SGWO230307153650, SGWO230307153725, Minimum status:Released, Maximum status:Allocated, Status Description:Created, Status:Held For Tasking, Status description:Released, Status:Ready For Assignment, Status:Assigned, TOTESB06, MINDZOP0200237, CARTSB06, Minimum status:Manifested, Minimum status:Shipped, Pack Station 1</td>
+<td></td>
+<td>2375</td>
+<td>WMS_SingsOrd_Batch_3.WMS_Single_Gift_Wrap@a1f72f5</td></tr>
+<tr>
+<td title='WMS_SingsOrd_Batch_3.WMS_Singles_GiftCard_Order.orderAllocation()'><b>orderAllocation</b><br>Test class: WMS_SingsOrd_Batch_3.WMS_Singles_GiftCard_Order<br>Parameters: SGCO230307153356, SGCO230307153530, Minimum status:Released, Maximum status:Allocated, Status Description:Created, Status:Held For Tasking, Status description:Released, Status:Ready For Assignment, Status:Assigned, TOTESB05, MINDZOP0200237, CARTSB05, Minimum status:Manifested, Minimum status:Shipped, Pack Station 1</td>
+<td></td>
+<td>200</td>
+<td>WMS_SingsOrd_Batch_3.WMS_Singles_GiftCard_Order@74f6c5d8</td></tr>
+</table><p>
+</body>
+</html>

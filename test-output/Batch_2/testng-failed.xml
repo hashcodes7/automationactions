@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Batch_2]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Inventory(failed)">
+    <groups>
+      <run>
+        <include name="Inventory"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="WMS_InvCont_Batch_2.WMS_Negative_Adjusment">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpend"/>
+          <include name="cycleCountUserDirec" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- WMS_InvCont_Batch_2.WMS_Negative_Adjusment -->
+      <class name="WMS_InvCont_Batch_2.WMS_Cycle_Count_userdirected">
+        <methods>
+          <include name="setUpend"/>
+          <include name="cycleCountUserDirec" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- WMS_InvCont_Batch_2.WMS_Cycle_Count_userdirected -->
+    </classes>
+  </test> <!-- Inventory(failed) -->
+</suite> <!-- Failed suite [Batch_2] -->

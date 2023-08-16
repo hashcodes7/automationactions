@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Batch_7]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Rateshop(failed)">
+    <groups>
+      <run>
+        <include name="Rateshop"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="WMS_Valid_Batch_7.WMS_FEPO_Rateshop_Validation">
+        <methods>
+          <include name="setUp"/>
+          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="setUpend"/>
+        </methods>
+      </class> <!-- WMS_Valid_Batch_7.WMS_FEPO_Rateshop_Validation -->
+      <class name="WMS_Valid_Batch_7.WMS_USSG_Rateshop_Validation">
+        <methods>
+          <include name="setUpend"/>
+          <include name="setUp"/>
+          <include name="orderAllocation" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- WMS_Valid_Batch_7.WMS_USSG_Rateshop_Validation -->
+      <class name="WMS_Valid_Batch_7.WMS_FGCG_Rateshop_Validation">
+        <methods>
+          <include name="setUpend"/>
+          <include name="orderAllocation"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- WMS_Valid_Batch_7.WMS_FGCG_Rateshop_Validation -->
+      <class name="WMS_Valid_Batch_7.WMS_USFC_Rateshop_Validation">
+        <methods>
+          <include name="setUpend"/>
+          <include name="setUp"/>
+          <include name="orderAllocation" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- WMS_Valid_Batch_7.WMS_USFC_Rateshop_Validation -->
+      <class name="WMS_Valid_Batch_7.WMS_DHEP_RateShop_Validation">
+        <methods>
+          <include name="setUpend"/>
+          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- WMS_Valid_Batch_7.WMS_DHEP_RateShop_Validation -->
+    </classes>
+  </test> <!-- Rateshop(failed) -->
+</suite> <!-- Failed suite [Batch_7] -->

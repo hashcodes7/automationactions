@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite_Batch_1]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="sample(failed)">
+    <groups>
+      <run>
+        <include name="sample"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="WMS_Test.WMS_Sample_Single_Order">
+        <methods>
+          <include name="orderAllocation" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- WMS_Test.WMS_Sample_Single_Order -->
+    </classes>
+  </test> <!-- sample(failed) -->
+</suite> <!-- Failed suite [Suite_Batch_1] -->
