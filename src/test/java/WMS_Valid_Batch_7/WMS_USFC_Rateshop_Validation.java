@@ -99,7 +99,7 @@ public class WMS_USFC_Rateshop_Validation extends WMS_TestBase {
 
 	public void orderAllocation(String OrderNumber, String CompleteSpecs, String CompleteSpecs2, String CompleteSpecs3,
 			 String CompleteSpecs4, String CompleteSpecs5, String shipviaData) throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest("::RateShop_Validation_USFC::");
@@ -667,6 +667,11 @@ public class WMS_USFC_Rateshop_Validation extends WMS_TestBase {
 
 		
 		}
+	}
+	catch (Exception e) {
+		System.out.println("Test case got failed"+ e);
+		test.log(Status.FAIL, "Test case got failed");
+	}
 		
 	}
 

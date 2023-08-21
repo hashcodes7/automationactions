@@ -99,7 +99,7 @@ public class WMS_DHEP_RateShop_Validation extends WMS_TestBase {
 	@Test(priority = 0, dataProvider = "DHEP_RateShop_Validation", dataProviderClass = DataProviders.class)
 	public void orderAllocation(String OrderNumber, String CompleteSpecs, String CompleteSpecs2, String CompleteSpecs3,
 			 String CompleteSpecs4, String CompleteSpecs5, String shipviaData) throws InterruptedException, AWTException {
-
+		try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest("::RateShop_Validation_DHEP::");
@@ -666,6 +666,11 @@ public class WMS_DHEP_RateShop_Validation extends WMS_TestBase {
 			test.log(Status.PASS, "ShipVia Succesfully verified");
 
 
+		}
+	}
+		catch (Exception e) {
+			System.out.println("Test case got failed"+ e);
+			test.log(Status.FAIL, "Test case got failed");
 		}
 
 		
