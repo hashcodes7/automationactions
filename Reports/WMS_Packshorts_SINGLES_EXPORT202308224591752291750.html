@@ -1,0 +1,2072 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>WMS Automation</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>WMS Automation-Test Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Aug 22, 2023 01:45:05 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='96.716%'><span class='strong'>324</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='3.284%'>11</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>:::WMS_Packshorts_SINGLES_EXPORT:::</span>
+						<span class='test-time'>Aug 22, 2023 01:45:06 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 22, 2023 01:45:06 PM</span>
+	<span class='label end-time'>Aug 22, 2023 02:29:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 44m 8s+370ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:06 PM</td>
+					<td class='step-details'>Browser Launched Time :13:45:060</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:06 PM</td>
+					<td class='step-details'>Browser Launched successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:06 PM</td>
+					<td class='step-details'>Manhattan Active Supply Chain logo is displayed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:06 PM</td>
+					<td class='step-details'>Entered Username</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:13 PM</td>
+					<td class='step-details'>Clicked on Submit Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:13 PM</td>
+					<td class='step-details'>Entered Password</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:19 PM</td>
+					<td class='step-details'>Clicked on Login Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:21 PM</td>
+					<td class='step-details'>Window resize</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:36 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:36 PM</td>
+					<td class='step-details'>Entered MenuSearch as ASNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:42 PM</td>
+					<td class='step-details'>Clicked on Order Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:47 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:45:52 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:06 PM</td>
+					<td class='step-details'>Entered Order Search</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:46:11 PM</td>
+					<td class='step-details'>Searching for Key SEB5230821141026</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:11 PM</td>
+					<td class='step-details'>Found Key SEB5230821141026</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:11 PM</td>
+					<td class='step-details'>Field Value Minimum status exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:11 PM</td>
+					<td class='step-details'>Expected value for Minimum status : Released matches actual value :Released</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:11 PM</td>
+					<td class='step-details'>DO verification completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:16 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:21 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:31 PM</td>
+					<td class='step-details'>clicked on one record button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:39 PM</td>
+					<td class='step-details'>clicked on run wave button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:46 PM</td>
+					<td class='step-details'>Selected The standard Wave</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:54 PM</td>
+					<td class='step-details'>clicked on one summit button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:46:54 PM</td>
+					<td class='step-details'>wave run start time is :13:46:540</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:20 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:20 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:20 PM</td>
+					<td class='step-details'>Wave run started at Time is   :13:47:200</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:20 PM</td>
+					<td class='step-details'>The Wave run Execution consumed time in Minutes  : 00:00:26</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:25 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:30 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:47:35 PM</td>
+					<td class='step-details'>Searching for Key SEB5230821141026</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:35 PM</td>
+					<td class='step-details'>Found Key SEB5230821141026</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:35 PM</td>
+					<td class='step-details'>Field Value Maximum status exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:35 PM</td>
+					<td class='step-details'>Expected value for Maximum status : Allocated matches actual value :Allocated</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:35 PM</td>
+					<td class='step-details'>DO verification completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:40 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:56 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:47:56 PM</td>
+					<td class='step-details'>Entered MenuSearch as OLPNS Page</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:02 PM</td>
+					<td class='step-details'>Clicked on OLPNS page Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:07 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:26 PM</td>
+					<td class='step-details'>status changed successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:31 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:47 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:48:51 PM</td>
+					<td class='step-details'>Searching for Key SEB5230821141026</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:51 PM</td>
+					<td class='step-details'>Found Key SEB5230821141026</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:51 PM</td>
+					<td class='step-details'>Field Value Status Description exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:51 PM</td>
+					<td class='step-details'>Expected value for Status Description : Created matches actual value :Created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:51 PM</td>
+					<td class='step-details'>DO verification completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:56 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:01 PM</td>
+					<td class='step-details'>Clicked on ExpandBar</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:02 PM</td>
+					<td class='step-details'>saved wave run ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:07 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:12 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:12 PM</td>
+					<td class='step-details'>Entered MenuSearch as wave run</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:18 PM</td>
+					<td class='step-details'>Clicked on waverun page  Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:23 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:36 PM</td>
+					<td class='step-details'>wave run ID search completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:44 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:44 PM</td>
+					<td class='step-details'>Entered MenuSearch as OLPNS Page</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:55 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:03 PM</td>
+					<td class='step-details'>work release allocation process  start time is :</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:03 PM</td>
+					<td class='step-details'>13:50:030</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:20 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:20 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:20 PM</td>
+					<td class='step-details'>Work Release Allocated at Time is   :13:50:200</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:20 PM</td>
+					<td class='step-details'>The Wave run Execution consumed time in Minutes  : 00:00:17</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:25 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:50:30 PM</td>
+					<td class='step-details'>Searching for Key W202308220010</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:30 PM</td>
+					<td class='step-details'>Found Key W202308220010</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:30 PM</td>
+					<td class='step-details'>Field Value Status exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:30 PM</td>
+					<td class='step-details'>Expected value for Status : Held For Tasking matches actual value :Held For Tasking</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:30 PM</td>
+					<td class='step-details'>DO verification completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:36 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:44 PM</td>
+					<td class='step-details'>Clicked on ExpandBar</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:44 PM</td>
+					<td class='step-details'>Batch id saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:50 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:50 PM</td>
+					<td class='step-details'>Entered MenuSearch as Batch List</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:56 PM</td>
+					<td class='step-details'>Clicked on Batch List Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:01 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:14 PM</td>
+					<td class='step-details'>Entered Batch List current ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:20 PM</td>
+					<td class='step-details'>Clicked on one record</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:25 PM</td>
+					<td class='step-details'>Clicked on release button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:30 PM</td>
+					<td class='step-details'>Clicked on Yes button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:30 PM</td>
+					<td class='step-details'>work release allocation process  start time is :</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:30 PM</td>
+					<td class='step-details'>13:51:300</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:52 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:52 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:52 PM</td>
+					<td class='step-details'>Order get ship conformed Time is   :13:51:520</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:52 PM</td>
+					<td class='step-details'>The batch list released Execution consumed time in Minutes  : 00:00:21</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:57 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:52:03 PM</td>
+					<td class='step-details'>Searching for Key B20230822009991</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:03 PM</td>
+					<td class='step-details'>Found Key B20230822009991</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:03 PM</td>
+					<td class='step-details'>Field Value Status description exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:03 PM</td>
+					<td class='step-details'>Expected value for Status description : Released matches actual value :Released</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:08 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:09 PM</td>
+					<td class='step-details'>Entered MenuSearch as tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:14 PM</td>
+					<td class='step-details'>Clicked  MenuSearch page tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:20 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:33 PM</td>
+					<td class='step-details'>Entered wave run ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:35 PM</td>
+					<td class='step-details'>Process Task ID saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:41 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:52:42 PM</td>
+					<td class='step-details'>Searching for Key WRPICK0000005099</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:42 PM</td>
+					<td class='step-details'>Found Key WRPICK0000005099</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:42 PM</td>
+					<td class='step-details'>Field Value Status exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:42 PM</td>
+					<td class='step-details'>Expected value for Status : Ready For Assignment matches actual value :Ready For Assignment</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:42 PM</td>
+					<td class='step-details'>Batch List Table Content Saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:47 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:53 PM</td>
+					<td class='step-details'>selected single order tab</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:58 PM</td>
+					<td class='step-details'>Clicked on assign Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:07 PM</td>
+					<td class='step-details'>Entered Username</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:13 PM</td>
+					<td class='step-details'>selected single order tab</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:18 PM</td>
+					<td class='step-details'>clicked on one threeDots button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:23 PM</td>
+					<td class='step-details'>clicked on details button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:29 PM</td>
+					<td class='step-details'>clicked on assigned expand bar</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:29 PM</td>
+					<td class='step-details'>taskgroup ID saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:34 PM</td>
+					<td class='step-details'>closed button clicked successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:39 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:53:41 PM</td>
+					<td class='step-details'>Searching for Key WRPICK0000005099</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:41 PM</td>
+					<td class='step-details'>Found Key WRPICK0000005099</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:41 PM</td>
+					<td class='step-details'>Field Value Status exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:41 PM</td>
+					<td class='step-details'>Expected value for Status : Assigned matches actual value :Assigned</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:41 PM</td>
+					<td class='step-details'>Task page all order Table Content Saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:46 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:47 PM</td>
+					<td class='step-details'>Entered MenuSearch as item</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:52 PM</td>
+					<td class='step-details'>clicked on item button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:58 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:03 PM</td>
+					<td class='step-details'>Entered item IDs on Item Serach box</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:13 PM</td>
+					<td class='step-details'>first item barcode is saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:18 PM</td>
+					<td class='step-details'>first item barcode is saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:23 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:24 PM</td>
+					<td class='step-details'>Entered MenuSearch as WM Menu</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:29 PM</td>
+					<td class='step-details'>Clicked on WM Mobile button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:29 PM</td>
+					<td class='step-details'>Window switched successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:39 PM</td>
+					<td class='step-details'>Clicked on WM Settings button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:45 PM</td>
+					<td class='step-details'>Clicked on Regerding Task Group</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:50 PM</td>
+					<td class='step-details'>Clicked on Task Group Dropdown</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:55 PM</td>
+					<td class='step-details'>Clicked on Task Group</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:55:05 PM</td>
+					<td class='step-details'>Clicked on Go Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:55:13 PM</td>
+					<td class='step-details'>Clicked on Done Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:19 PM</td>
+					<td class='step-details'>Clicked on Task Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:24 PM</td>
+					<td class='step-details'>Entered Task button text box column</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:25 PM</td>
+					<td class='step-details'>Entered Task ID in text box</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:35 PM</td>
+					<td class='step-details'>Clicked on Go Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:38 PM</td>
+					<td class='step-details'>Entered CART KEY in text box</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:49 PM</td>
+					<td class='step-details'>Clicked on Go Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:59 PM</td>
+					<td class='step-details'>Clicked on Conform Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:09 PM</td>
+					<td class='step-details'>Clicked on Conform Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:09 PM</td>
+					<td class='step-details'>Entered Current Location Barcode</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:19 PM</td>
+					<td class='step-details'>Clicked on Go Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:24 PM</td>
+					<td class='step-details'>Entered MenuSearch as ILPNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:29 PM</td>
+					<td class='step-details'>Clicked on iLPN Menu link</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:48 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:48 PM</td>
+					<td class='step-details'>Entered MenuSearch as ASNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:54 PM</td>
+					<td class='step-details'>Clicked on Order Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:05 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:18 PM</td>
+					<td class='step-details'>Entered Order Search</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:29 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:29 PM</td>
+					<td class='step-details'>Entered MenuSearch as tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:35 PM</td>
+					<td class='step-details'>Clicked  MenuSearch page tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:40 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:48 PM</td>
+					<td class='step-details'>Entered wave run ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:53 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:00:04 PM</td>
+					<td class='step-details'>Clicked on LeviPackStation Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:00:18 PM</td>
+					<td class='step-details'>Clicked on PackStationDropdown Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:00:23 PM</td>
+					<td class='step-details'>Clicked on StartPacking Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:17 PM</td>
+					<td class='step-details'>Entered MenuSearch as ILPNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:22 PM</td>
+					<td class='step-details'>Clicked on iLPN Menu link</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:41 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:41 PM</td>
+					<td class='step-details'>Entered MenuSearch as tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:47 PM</td>
+					<td class='step-details'>Clicked  MenuSearch page tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:52 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:00 PM</td>
+					<td class='step-details'>Entered wave run ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:05 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:11 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:11 PM</td>
+					<td class='step-details'>Entered MenuSearch as ASNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:17 PM</td>
+					<td class='step-details'>Clicked on Order Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:22 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:35 PM</td>
+					<td class='step-details'>Entered Order Search</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:45 PM</td>
+					<td class='step-details'>clicked on one record button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:50 PM</td>
+					<td class='step-details'>clicked on order related links</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:56 PM</td>
+					<td class='step-details'>clicked on order shordage</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:05 PM</td>
+					<td class='step-details'>clicked on one record button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:15 PM</td>
+					<td class='step-details'>clicked on chase wave btn</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:25 PM</td>
+					<td class='step-details'>selected OPS chase wave</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:32 PM</td>
+					<td class='step-details'>clicked on one summit button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:37 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:43 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:48 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:53 PM</td>
+					<td class='step-details'>saved wave run ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:58 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:59 PM</td>
+					<td class='step-details'>Entered MenuSearch as wave run</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:04 PM</td>
+					<td class='step-details'>Clicked on waverun page  Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:09 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:23 PM</td>
+					<td class='step-details'>wave run ID search completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:30 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:30 PM</td>
+					<td class='step-details'>Entered MenuSearch as OLPNS Page</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:41 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:49 PM</td>
+					<td class='step-details'>work release allocation process  start time is :</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:49 PM</td>
+					<td class='step-details'>14:04:490</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:14 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:14 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:14 PM</td>
+					<td class='step-details'>Work Release Allocated at Time is   :14:05:140</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:14 PM</td>
+					<td class='step-details'>The Wave run Execution consumed time in Minutes  : 00:00:17</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:19 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:05:24 PM</td>
+					<td class='step-details'>Searching for Key W202308220012</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:24 PM</td>
+					<td class='step-details'>Found Key W202308220012</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:24 PM</td>
+					<td class='step-details'>Field Value Status exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:24 PM</td>
+					<td class='step-details'>Expected value for Status : Held For Tasking matches actual value :Held For Tasking</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:24 PM</td>
+					<td class='step-details'>DO verification completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:29 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:38 PM</td>
+					<td class='step-details'>Clicked on ExpandBar</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:38 PM</td>
+					<td class='step-details'>Batch id saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:43 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:44 PM</td>
+					<td class='step-details'>Entered MenuSearch as Batch List</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:50 PM</td>
+					<td class='step-details'>Clicked on Batch List Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:55 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:08 PM</td>
+					<td class='step-details'>Entered Batch List current ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:13 PM</td>
+					<td class='step-details'>Clicked on one record</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:19 PM</td>
+					<td class='step-details'>Clicked on release button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:24 PM</td>
+					<td class='step-details'>Clicked on Yes button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:24 PM</td>
+					<td class='step-details'>work release allocation process  start time is :</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:24 PM</td>
+					<td class='step-details'>14:06:240</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:46 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:46 PM</td>
+					<td class='step-details'>waiting for new status update</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:46 PM</td>
+					<td class='step-details'>Order get ship conformed Time is   :14:06:460</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:46 PM</td>
+					<td class='step-details'>The batch list released Execution consumed time in Minutes  : 00:00:21</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:51 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:06:57 PM</td>
+					<td class='step-details'>Searching for Key B20230822011989</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:57 PM</td>
+					<td class='step-details'>Found Key B20230822011989</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:57 PM</td>
+					<td class='step-details'>Field Value Status description exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:57 PM</td>
+					<td class='step-details'>Expected value for Status description : Released matches actual value :Released</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:02 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:02 PM</td>
+					<td class='step-details'>Entered MenuSearch as tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:08 PM</td>
+					<td class='step-details'>Clicked  MenuSearch page tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:13 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:26 PM</td>
+					<td class='step-details'>Entered wave run ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:29 PM</td>
+					<td class='step-details'>Process Task ID saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:34 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:07:37 PM</td>
+					<td class='step-details'>Searching for Key WRPICK0000005101</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:37 PM</td>
+					<td class='step-details'>Found Key WRPICK0000005101</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:37 PM</td>
+					<td class='step-details'>Field Value Status exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:37 PM</td>
+					<td class='step-details'>Expected value for Status : Ready For Assignment matches actual value :Ready For Assignment</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:37 PM</td>
+					<td class='step-details'>Batch List Table Content Saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:43 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:48 PM</td>
+					<td class='step-details'>selected single order tab</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:53 PM</td>
+					<td class='step-details'>Clicked on assign Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:03 PM</td>
+					<td class='step-details'>Entered Username</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:08 PM</td>
+					<td class='step-details'>selected single order tab</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:14 PM</td>
+					<td class='step-details'>clicked on one threeDots button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:19 PM</td>
+					<td class='step-details'>clicked on details button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:24 PM</td>
+					<td class='step-details'>clicked on assigned expand bar</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:24 PM</td>
+					<td class='step-details'>taskgroup ID saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:30 PM</td>
+					<td class='step-details'>closed button clicked successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:35 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:08:40 PM</td>
+					<td class='step-details'>Searching for Key WRPICK0000005101</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:40 PM</td>
+					<td class='step-details'>Found Key WRPICK0000005101</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:40 PM</td>
+					<td class='step-details'>Field Value Status exists</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:40 PM</td>
+					<td class='step-details'>Expected value for Status : Assigned matches actual value :Assigned</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:40 PM</td>
+					<td class='step-details'>Task page all order Table Content Saved</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:46 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:46 PM</td>
+					<td class='step-details'>Entered MenuSearch as WM Menu</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:52 PM</td>
+					<td class='step-details'>Clicked on WM Mobile button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:52 PM</td>
+					<td class='step-details'>Window switched successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:09:00 PM</td>
+					<td class='step-details'>Clicked on WM Settings button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:09:05 PM</td>
+					<td class='step-details'>Clicked on Regerding Task Group</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:09:10 PM</td>
+					<td class='step-details'>Clicked on Task Group Dropdown</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:09:15 PM</td>
+					<td class='step-details'>Clicked on Task Group</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:09:26 PM</td>
+					<td class='step-details'>Clicked on Go Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:09:34 PM</td>
+					<td class='step-details'>Clicked on Done Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:10:39 PM</td>
+					<td class='step-details'>Clicked on Task Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:10:44 PM</td>
+					<td class='step-details'>Entered Task button text box column</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:10:45 PM</td>
+					<td class='step-details'>Entered Task ID in text box</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:10:55 PM</td>
+					<td class='step-details'>Clicked on Go Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:10:59 PM</td>
+					<td class='step-details'>Entered CART KEY in text box</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:11:09 PM</td>
+					<td class='step-details'>Clicked on Go Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:11:19 PM</td>
+					<td class='step-details'>Clicked on Conform Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:11:29 PM</td>
+					<td class='step-details'>Clicked on Conform Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:11:29 PM</td>
+					<td class='step-details'>Entered Current Location Barcode</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:11:40 PM</td>
+					<td class='step-details'>Clicked on Go Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:12:45 PM</td>
+					<td class='step-details'>Entered MenuSearch as ILPNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:12:50 PM</td>
+					<td class='step-details'>Clicked on iLPN Menu link</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:13:09 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:13:10 PM</td>
+					<td class='step-details'>Entered MenuSearch as ASNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:13:15 PM</td>
+					<td class='step-details'>Clicked on Order Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:13:26 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:13:40 PM</td>
+					<td class='step-details'>Entered Order Search</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:13:50 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:13:51 PM</td>
+					<td class='step-details'>Entered MenuSearch as tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:13:56 PM</td>
+					<td class='step-details'>Clicked  MenuSearch page tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:14:02 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:14:09 PM</td>
+					<td class='step-details'>Entered wave run ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:14:15 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:14:26 PM</td>
+					<td class='step-details'>Clicked on LeviPackStation Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:14:45 PM</td>
+					<td class='step-details'>Clicked on StartPacking Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:16:26 PM</td>
+					<td class='step-details'>Entered MenuSearch as ILPNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:16:31 PM</td>
+					<td class='step-details'>Clicked on iLPN Menu link</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:16:50 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:16:51 PM</td>
+					<td class='step-details'>Entered MenuSearch as tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:16:56 PM</td>
+					<td class='step-details'>Clicked  MenuSearch page tasks</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:17:02 PM</td>
+					<td class='step-details'>Cleared Selected Filter</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:17:09 PM</td>
+					<td class='step-details'>Entered wave run ID</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:17:15 PM</td>
+					<td class='step-details'>Page refresh completed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:17:20 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:17:21 PM</td>
+					<td class='step-details'>Entered MenuSearch as ASNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:17:37 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:19:20 PM</td>
+					<td class='step-details'>{"success":true,"header":,"data":{"severityType":"SUCCESS","notifications":[{"severity":"SUCCESS","source":,"code":"10","message":"Success"}],"provider":"AGILE","transactionIdentifier":"00000521771006916609","journalDetails":,"ratedShipments":[{"shippingCharge":{"baseCharge":{"amount":11.63,"currency":"USD"},"accessorialCharge":{"amount":0.0,"currency":"USD"},"otherCharge":{"amount":0.0,"currency":"USD"},"totalCharge":{"amount":11.63,"currency":"USD"},"discount":},"ratedPackages":[],"shipDate":"2023-08-23T00:00:00","deliveryDate":,"deliveryDays":,"serviceType":"LOGISTYX_USPS_PARCEL_SELECT_GROUND","serviceTypeName":"Logistyx USPS Parcel Select Ground","weight":{"value":2.91,"weightUnits":},"commitmentLevel":"Unknown","carrierCode":"USPS_SERVER","carrierName":"Logistyx USPS Server","extended":{}}],"rateGroup":"0"},"messageKey":,"message":,"errors":[],"exceptions":[],"messages":{"Message":[],"Size":0},"rootCause":,"cloudComponent":"com-manh-cp-agile:docker,sc,rest,cloud,kubernetes,gcp,rest-kubernetes,levi,s,levis,levissf11o:8080","cloudComponentHostName":"com-manh-cp-agile-95f8fb756-xwcnp","requestUri":,"statusCode":"OK"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:21:24 PM</td>
+					<td class='step-details'>Entered MenuSearch as ASNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:21:30 PM</td>
+					<td class='step-details'>clicked on order shordage</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:21:42 PM</td>
+					<td class='step-details'>select first ROW column</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:21:56 PM</td>
+					<td class='step-details'>Clicked on grid button and viewed record details</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:23:06 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:23:07 PM</td>
+					<td class='step-details'>Entered MenuSearch as ASNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:23:12 PM</td>
+					<td class='step-details'>Clicked on Order Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:23:46 PM</td>
+					<td class='step-details'>clicked on one record button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:06 PM</td>
+					<td class='step-details'>Clicked on menu Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:07 PM</td>
+					<td class='step-details'>Entered MenuSearch as ASNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:13 PM</td>
+					<td class='step-details'>Clicked on Order Button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:31 PM</td>
+					<td class='step-details'>Entered Order Search</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:41 PM</td>
+					<td class='step-details'>clicked on one record button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:45 PM</td>
+					<td class='step-details'>clicked on one threeDots button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:52 PM</td>
+					<td class='step-details'>clicked on ship confirm button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:52 PM</td>
+					<td class='step-details'>Ship Conformation is Started time :</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:52 PM</td>
+					<td class='step-details'>14:25:520</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:27:31 PM</td>
+					<td class='step-details'>DO status now changed to Shipped</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:27:31 PM</td>
+					<td class='step-details'>Order get ship conformed Time is   :14:27:310</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:27:31 PM</td>
+					<td class='step-details'>14:27:310</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:27:31 PM</td>
+					<td class='step-details'>The Execution consumed time in Minutes  : 00:01:38</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:27:37 PM</td>
+					<td class='step-details'>Entered MenuSearch as ILPNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:27:55 PM</td>
+					<td class='step-details'>Entered MenuSearch as ILPNs</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:29:13 PM</td>
+					<td class='step-details'>Payload text contains Full ShipConfirm</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:29:14 PM</td>
+					<td class='step-details'>Payload text contains SEB5230821141026</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:29:14 PM</td>
+					<td class='step-details'>Payload text contains SEB5230821141024</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:29:14 PM</td>
+					<td class='step-details'>The Execution is finished 14:29:140</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+							<ul class='screenshots'>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014506.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014506.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014506.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014513.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014513.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014513.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014606.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014606.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014606.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014616.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014616.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014616.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014631.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014631.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014631.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014646.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014646.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014646.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014720.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014720.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014720.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014725.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014725.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014725.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014740.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014740.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014740.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014826.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014826.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014826.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014841.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014841.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014841.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014856.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014856.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014856.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014901.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014901.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014901.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014936.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014936.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822014936.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015020.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015020.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015020.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015036.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015036.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015036.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015044.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015044.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015044.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015114.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015114.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015114.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015125.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015125.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015125.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015130.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015130.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015130.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015152.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015152.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015152.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015203.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015203.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015203.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015233.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015233.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015233.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015253.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015253.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015253.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015313.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015313.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015313.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015323.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015323.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015323.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015329.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015329.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015329.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015334.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015334.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015334.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015341.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015341.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015341.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015403.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015403.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015403.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015429.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015429.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015429.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015445.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015445.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015445.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015455.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015455.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015455.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015619.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015619.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015619.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015625.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015625.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015625.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015807.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015807.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015807.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015808.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015808.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015808.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015818.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015818.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015818.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015837.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015837.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015837.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015905.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015905.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015905.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015948.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015948.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015948.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015953.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015953.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822015953.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020018.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020018.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020018.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020039.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020039.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020039.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020049.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020049.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020049.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020130.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020130.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020130.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020200.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020200.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020200.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020205.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020205.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020205.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020235.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020235.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020235.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020245.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020245.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020245.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020305.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020305.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020305.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020423.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020423.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020423.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020514.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020514.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020514.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020529.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020529.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020529.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020538.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020538.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020538.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020608.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020608.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020608.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020619.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020619.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020619.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020624.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020624.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020624.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020646.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020646.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020646.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020657.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020657.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020657.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020726.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020726.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020726.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020748.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020748.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020748.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020808.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020808.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020808.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020819.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020819.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020819.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020824.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020824.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020824.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020830.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020830.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020830.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020840.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020840.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020840.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020852.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020852.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020852.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020905.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020905.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020905.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020915.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020915.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822020915.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021039.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021039.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021039.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021045.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021045.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021045.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021228.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021228.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021228.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021228.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021228.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021228.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021239.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021239.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021239.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021259.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021259.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021259.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021326.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021326.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021326.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021409.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021409.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021409.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021415.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021415.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021415.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021444.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021444.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021444.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021523.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021523.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021523.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021603.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021603.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021603.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021639.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021639.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021639.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021709.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021709.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021709.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021715.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021715.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822021715.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022124.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022124.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022124.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022142.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022142.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022142.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022336.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022336.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022336.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022346.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022346.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022346.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022507.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022507.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022507.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022531.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022531.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022531.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022541.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022541.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022541.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022552.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022552.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022552.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022731.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022731.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022731.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022743.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022743.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022743.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022805.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022805.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022805.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022846.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022846.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022846.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022851.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022851.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022851.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022857.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022857.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022857.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022905.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022905.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022905.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022913.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022913.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022913.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022914.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022914.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022914.png'></li>
+								<li><img data-featherlight='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022914.png' width='10%' src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022914.png' data-src='C:\Automation\WMS_Henderson\Failed_Screenshots\Login20230822022914.png'></li>
+							</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>335</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Aug 22, 2023 01:45:05 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Aug 22, 2023 02:29:14 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 44m 8s+603ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 324,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 11,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

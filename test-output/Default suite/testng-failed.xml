@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two">
+      <class name="WMS_InvCont_Batch_2.WMS_Cycle_Recounts">
         <methods>
           <include name="afterMethod"/>
           <include name="tearDown"/>
           <include name="CreateSummary"/>
-          <include name="setUpend"/>
+          <include name="cycleCountUserDirec" invocation-numbers="0"/>
           <include name="setUp"/>
-          <include name="orderAllocation"/>
+          <include name="setUpend"/>
         </methods>
-      </class> <!-- WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two -->
+      </class> <!-- WMS_InvCont_Batch_2.WMS_Cycle_Recounts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

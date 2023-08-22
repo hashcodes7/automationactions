@@ -143,7 +143,8 @@ public class WMS_Clock_In extends WMS_TestBase {
 
 			wvMobilePage.enterUserId(UserId);
 			addSrceenShot("Login", test, Capture);
-			wvMobilePage.clickUserId();
+			//removed as part of CD 67
+			//wvMobilePage.clickUserId();
 
 			wvMobilePage.clickCalendarInBtn();
 

@@ -177,6 +177,8 @@ public class WMS_Add_Condition_Code extends WMS_TestBase {
 			addSrceenShot("Login", test, Capture);
 
 			wvMobilePage.clickGoBtn();		
+			// added as part of CD 67
+			wvMobilePage.ConfirmBtn();
 
 			utilities.closeCurrentWindow();
 

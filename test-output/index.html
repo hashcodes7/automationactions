@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\bhn\AppData\Local\Temp\testng-eclipse-1680822197\testng-customsuite.xml</span>
+                    <span>C:\Users\bhn\AppData\Local\Temp\testng-eclipse--1955294630\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two" class="method navigator-link" hash-for-method="orderAllocation">orderAllocation</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="WMS_InvCont_Batch_2.WMS_Cycle_Recounts" class="method navigator-link" hash-for-method="cycleCountUserDirec(MZ0200201C13, 005010000 3334, M-Z02-002-01-C-13)">cycleCountUserDirec(MZ0200201C13, 005010000 3334, M-Z02-002-01-C-13)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -121,22 +121,63 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two</span>
+              <span class="class-name">WMS_InvCont_Batch_2.WMS_Cycle_Recounts</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="orderAllocation">
-                  </a> <!-- orderAllocation -->
-                  <span class="method-name">orderAllocation</span>
-                  <div class="stack-trace">java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)&quot; is null
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:57)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:157)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:803)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:728)
-	at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
-	at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:911)
+                  <a name="cycleCountUserDirec(MZ0200201C13, 005010000 3334, M-Z02-002-01-C-13)">
+                  </a> <!-- cycleCountUserDirec(MZ0200201C13, 005010000 3334, M-Z02-002-01-C-13) -->
+                  <span class="method-name">cycleCountUserDirec</span>
+                  <span class="parameters">(MZ0200201C13,005010000 3334,M-Z02-002-01-C-13)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos; Status : &apos;]/ancestor::div[@tabindex=&apos;0&apos;]/descendant::span[@class=&apos;field-value ng-star-inserted&apos;][5]&quot;}
+  (Session info: chrome=115.0.5790.171)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;BYODIICU3LIGOWY&apos;, ip: &apos;192.168.0.112&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.171, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\bhn\AppData\Local\...}, goog:chromeOptions: {debuggerAddress: localhost:61147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf753ff179479e32566f59714d465a2f
+*** Element info: {Using=xpath, value=//*[text()=&apos; Status : &apos;]/ancestor::div[@tabindex=&apos;0&apos;]/descendant::span[@class=&apos;field-value ng-star-inserted&apos;][5]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+	at com.WMS_Utilities.WMS_WebDriverUtilities.getText(WMS_WebDriverUtilities.java:241)
+	at com.WMS_ApplicationPages.WMS_LocationInventoryPage.pendingBookStatus(WMS_LocationInventoryPage.java:263)
+	at WMS_InvCont_Batch_2.WMS_Cycle_Recounts.cycleCountUserDirec(WMS_Cycle_Recounts.java:239)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -156,16 +197,6 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)&quot; is null
-	at resources.DataProviders.SingleBagPakTwo(DataProviders.java:445)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:53)
-	... 25 more
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -175,7 +206,7 @@ Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xs
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\bhn\AppData\Local\Temp\testng-eclipse-1680822197\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\bhn\AppData\Local\Temp\testng-eclipse--1955294630\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -184,7 +215,7 @@ Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xs
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two&quot;/&gt;
+      &lt;class name=&quot;WMS_InvCont_Batch_2.WMS_Cycle_Recounts&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -209,10 +240,10 @@ Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xs
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Single_Orders</span>
+              <span class="test-group-name">Inventory</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">orderAllocation</span>
+                <span class="method-in-group-name">cycleCountUserDirec</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -234,14 +265,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'orderAllocation')
-data.setCell(0, 2, 'WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two')
-data.setCell(0, 3, 0);
+data.setCell(0, 1, 'cycleCountUserDirec')
+data.setCell(0, 2, 'WMS_InvCont_Batch_2.WMS_Cycle_Recounts')
+data.setCell(0, 3, 828416);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 13 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -267,16 +298,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">WMS_InvCont_Batch_2.WMS_Cycle_Recounts</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">CreateSummary</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
-              <div class="configuration-test after">
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">785 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
+                <span class="method-name">cycleCountUserDirec(MZ0200201C13, 005010000 3334, M-Z02-002-01-C-13)</span>
+                <span class="method-start">17396 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">setUpend</span>
+                <span class="method-start">845822 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">afterMethod([TestResult name=cycleCountUserDirec status=FAILURE method=WMS_Cycle_Recounts.cycleCountUserDirec(ja...)</span>
+                <span class="method-start">848622 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">993 ms</span>
+                <span class="method-start">848640 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

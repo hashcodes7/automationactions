@@ -145,8 +145,8 @@ public class WMS_ClockOut extends WMS_TestBase {
 			addSrceenShot("Login", test, Capture);
 
 			wvMobilePage.enterUserId(UserId);
-
-			wvMobilePage.clickUserId();
+//removed as part of CD 67
+		//	wvMobilePage.clickUserId();
 			addSrceenShot("Login", test, Capture);
 			addSrceenShot("Login", test, Capture);
 			wvMobilePage.clickCalendarOutBtn();

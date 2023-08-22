@@ -175,7 +175,8 @@ public class WMS_Remove_Condition_Code extends WMS_TestBase {
 
 			wvMobilePage.clickDamagedBtn();
 
-			
+			// added as part of CD 67
+			wvMobilePage.ConfirmBtn();
 
 			utilities.closeCurrentWindow();
 
