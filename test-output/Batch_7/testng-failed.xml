@@ -11,14 +11,21 @@
       <class name="WMS_Valid_Batch_7.WMS_DHEP_RateShop_Validation">
         <methods>
           <include name="setUpend"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="orderAllocation"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- WMS_Valid_Batch_7.WMS_DHEP_RateShop_Validation -->
+      <class name="WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation">
+        <methods>
+          <include name="orderAllocation"/>
+          <include name="setUp"/>
+          <include name="setUpend"/>
+        </methods>
+      </class> <!-- WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation -->
       <class name="WMS_Valid_Batch_7.WMS_FEPO_Rateshop_Validation">
         <methods>
           <include name="setUp"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="orderAllocation"/>
           <include name="setUpend"/>
         </methods>
       </class> <!-- WMS_Valid_Batch_7.WMS_FEPO_Rateshop_Validation -->
@@ -26,20 +33,20 @@
         <methods>
           <include name="setUpend"/>
           <include name="setUp"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="orderAllocation"/>
         </methods>
       </class> <!-- WMS_Valid_Batch_7.WMS_USSG_Rateshop_Validation -->
       <class name="WMS_Valid_Batch_7.WMS_FE2D_RateShop_Validation">
         <methods>
           <include name="setUpend"/>
           <include name="setUp"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="orderAllocation"/>
         </methods>
       </class> <!-- WMS_Valid_Batch_7.WMS_FE2D_RateShop_Validation -->
       <class name="WMS_Valid_Batch_7.WMS_ONTRAC_Rateshop_Validation">
         <methods>
           <include name="setUp"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="orderAllocation"/>
           <include name="setUpend"/>
         </methods>
       </class> <!-- WMS_Valid_Batch_7.WMS_ONTRAC_Rateshop_Validation -->
@@ -47,13 +54,13 @@
         <methods>
           <include name="setUpend"/>
           <include name="setUp"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="orderAllocation"/>
         </methods>
       </class> <!-- WMS_Valid_Batch_7.WMS_USFC_Rateshop_Validation -->
       <class name="WMS_Valid_Batch_7.WMS_FGCG_Rateshop_Validation">
         <methods>
           <include name="setUpend"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="orderAllocation"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- WMS_Valid_Batch_7.WMS_FGCG_Rateshop_Validation -->
