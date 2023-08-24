@@ -647,6 +647,13 @@ public class WMS_PST_Singles_Gift_Wrap extends WMS_TestBase {
 				
 				  wvMobilePage.clickPickExcep();
 				  wvMobilePage.clickConfirmBtn();
+				  try {
+
+						wvMobilePage.clickConfirmBtn();
+
+					} catch (Exception e) {
+
+					}
 				  utilities.closeCurrentWindow(); 
 
 				/*

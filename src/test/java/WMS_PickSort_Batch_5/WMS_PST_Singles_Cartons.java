@@ -648,6 +648,14 @@ public class WMS_PST_Singles_Cartons extends WMS_TestBase {
 				wvMobilePage.clickPickExcep();
 
 				wvMobilePage.clickConfirmBtn();
+				
+				try {
+
+					wvMobilePage.clickConfirmBtn();
+
+				} catch (Exception e) {
+
+				}
 
 				/*
 				 * wvMobilePage.getInformationMessageAndClickOk(); addSrceenShot("Login", test,

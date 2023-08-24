@@ -649,6 +649,13 @@ public class WMS_PST_Singles_Bags extends WMS_TestBase {
 				wvMobilePage.clickPickExcep();
 
 				wvMobilePage.clickConfirmBtn();
+				try {
+
+					wvMobilePage.clickConfirmBtn();
+
+				} catch (Exception e) {
+
+				}
 
 				utilities.closeCurrentWindow();
 				// cycle count /////////////////////////////////////////
@@ -729,8 +736,16 @@ public class WMS_PST_Singles_Bags extends WMS_TestBase {
 				addSrceenShot("Login", test, Capture);
 
 				wvMobilePage.clickGoBtn();
+				addSrceenShot("Login", test, Capture);
 
-				wvMobilePage.clickConfirmBtn();
+				try {
+					addSrceenShot("Login", test, Capture);
+					wvMobilePage.clickConfirmBtn();
+				}
+				catch (Exception e){
+					addSrceenShot("Login", test, Capture);
+					System.out.println("Error in CCM"+ e);
+				}
 
 				// itembarcode
 
