@@ -2,136 +2,53 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-23T21:04:38 IST" name="Default suite" finished-at="2023-08-23T21:11:12 IST" duration-ms="393853">
+  <suite started-at="2023-08-25T14:27:42 IST" name="Default suite" finished-at="2023-08-25T14:28:25 IST" duration-ms="42962">
     <groups>
+      <group name="Inventory">
+        <method signature="WMS_Add_Condition_Code.addAndRemoveCondition(java.lang.String)[pri:0, instance:WMS_InvCont_Batch_2.WMS_Add_Condition_Code@4bf48f6]" name="addAndRemoveCondition" class="WMS_InvCont_Batch_2.WMS_Add_Condition_Code"/>
+      </group> <!-- Inventory -->
     </groups>
-    <test started-at="2023-08-23T21:04:38 IST" name="Default test" finished-at="2023-08-23T21:11:12 IST" duration-ms="393853">
-      <class name="WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton">
-        <test-method is-config="true" signature="CreateSummary()[pri:0, instance:WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton@2fba3fc4]" started-at="2023-08-23T21:04:38 IST" name="CreateSummary" finished-at="2023-08-23T21:04:39 IST" duration-ms="10" status="PASS">
+    <test started-at="2023-08-25T14:27:42 IST" name="Default test" finished-at="2023-08-25T14:28:25 IST" duration-ms="42962">
+      <class name="WMS_InvCont_Batch_2.WMS_Add_Condition_Code">
+        <test-method is-config="true" signature="CreateSummary()[pri:0, instance:WMS_InvCont_Batch_2.WMS_Add_Condition_Code@4bf48f6]" started-at="2023-08-25T14:27:42 IST" name="CreateSummary" finished-at="2023-08-25T14:27:42 IST" duration-ms="16" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateSummary -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton@2fba3fc4]" started-at="2023-08-23T21:04:39 IST" name="setUp" finished-at="2023-08-23T21:04:54 IST" duration-ms="14657" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:WMS_InvCont_Batch_2.WMS_Add_Condition_Code@4bf48f6]" started-at="2023-08-25T14:27:43 IST" name="setUp" finished-at="2023-08-25T14:28:03 IST" duration-ms="20451" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="orderAllocation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton@2fba3fc4]" started-at="2023-08-23T21:04:54 IST" name="orderAllocation" data-provider="PickSort_MultiBag_Corton_2slot" finished-at="2023-08-23T21:11:12 IST" duration-ms="377565" status="FAIL">
+        <test-method signature="addAndRemoveCondition(java.lang.String)[pri:0, instance:WMS_InvCont_Batch_2.WMS_Add_Condition_Code@4bf48f6]" started-at="2023-08-25T14:28:03 IST" name="addAndRemoveCondition" data-provider="Add_and_Remove_Condition" finished-at="2023-08-25T14:28:24 IST" duration-ms="20247" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[MB2407230001]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[MB2407230002]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Minimum status:Released]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Maximum status:Allocated]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Status Description:Created]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Status:Held For Tasking]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Status description:Released]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Status:Ready For Assignment]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[Status:Assigned]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[TOTEAJ90]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[TOTEAJ91]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[TOTEAJ92]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[MINDZOP0200237]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[CARTAJ91]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[CARTAJ92]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[Minimum status:Manifested]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[Minimum status:Shipped]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[Pack Station 1]]>
+                <![CDATA[TOTEAJ77]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(text(),'MB2407230001')]/ancestor::div[contains(@class,'dm-flex-col-layout')]/descendant::div[@class='priorityCircle ng-star-inserted']"}
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=116.0.5845.111)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'BYODIICU3LIGOWY', ip: '192.168.0.112', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\bhn\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61668}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 511ee08b69fffc703266478f719c197f
-*** Element info: {Using=xpath, value=//a[contains(text(),'MB2407230001')]/ancestor::div[contains(@class,'dm-flex-col-layout')]/descendant::div[@class='priorityCircle ng-star-inserted']}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\bhn\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51905}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e1bf5c8bc44771f9cf8261f5f4167a75
+*** Element info: {Using=xpath, value=//div[@alt='Logo']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(text(),'MB2407230001')]/ancestor::div[contains(@class,'dm-flex-col-layout')]/descendant::div[@class='priorityCircle ng-star-inserted']"}
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=116.0.5845.111)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'BYODIICU3LIGOWY', ip: '192.168.0.112', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\bhn\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61668}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 511ee08b69fffc703266478f719c197f
-*** Element info: {Using=xpath, value=//a[contains(text(),'MB2407230001')]/ancestor::div[contains(@class,'dm-flex-col-layout')]/descendant::div[@class='priorityCircle ng-star-inserted']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\bhn\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51905}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e1bf5c8bc44771f9cf8261f5f4167a75
+*** Element info: {Using=xpath, value=//div[@alt='Logo']}
+at jdk.internal.reflect.GeneratedConstructorAccessor34.newInstance(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -145,8 +62,17 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at com.WMS_ApplicationPages.WMS_OrdersPage.olpnreleaseStatusTwoOrders(WMS_OrdersPage.java:1617)
-at WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton.orderAllocation(WMS_PST_MultisBag_Carton.java:203)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy15.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:4220)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.toString(ExpectedConditions.java:305)
+at java.base/java.lang.String.valueOf(String.java:4220)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:268)
+at com.WMS_ApplicationPages.WMS_LoginPage.verifyLogoExists(WMS_LoginPage.java:73)
+at WMS_InvCont_Batch_2.WMS_Add_Condition_Code.addAndRemoveCondition(WMS_Add_Condition_Code.java:109)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -177,19 +103,19 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- orderAllocation -->
-        <test-method is-config="true" signature="setUpend()[pri:0, instance:WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton@2fba3fc4]" started-at="2023-08-23T21:11:12 IST" name="setUpend" finished-at="2023-08-23T21:11:12 IST" duration-ms="714" status="PASS">
+        </test-method> <!-- addAndRemoveCondition -->
+        <test-method is-config="true" signature="setUpend()[pri:0, instance:WMS_InvCont_Batch_2.WMS_Add_Condition_Code@4bf48f6]" started-at="2023-08-25T14:28:24 IST" name="setUpend" finished-at="2023-08-25T14:28:25 IST" duration-ms="914" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpend -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton@2fba3fc4]" started-at="2023-08-23T21:11:12 IST" name="afterMethod" finished-at="2023-08-23T21:11:12 IST" duration-ms="2" status="FAIL">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:WMS_InvCont_Batch_2.WMS_Add_Condition_Code@4bf48f6]" started-at="2023-08-25T14:28:25 IST" name="afterMethod" finished-at="2023-08-25T14:28:25 IST" duration-ms="5" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=orderAllocation status=FAILURE method=WMS_PST_MultisBag_Carton.orderAllocation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton@2fba3fc4] output={null}]]]>
+                <![CDATA[[TestResult name=addAndRemoveCondition status=FAILURE method=WMS_Add_Condition_Code.addAndRemoveCondition(java.lang.String)[pri:0, instance:WMS_InvCont_Batch_2.WMS_Add_Condition_Code@4bf48f6] output={null}]]]>
               </value>
             </param>
           </params>
@@ -251,11 +177,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton@2fba3fc4]" started-at="2023-08-23T21:11:12 IST" name="tearDown" finished-at="2023-08-23T21:11:12 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:WMS_InvCont_Batch_2.WMS_Add_Condition_Code@4bf48f6]" started-at="2023-08-25T14:28:25 IST" name="tearDown" finished-at="2023-08-25T14:28:25 IST" duration-ms="147" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton -->
+      </class> <!-- WMS_InvCont_Batch_2.WMS_Add_Condition_Code -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

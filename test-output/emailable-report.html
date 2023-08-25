@@ -9,11 +9,11 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">393,853</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">42,962</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton</td><td><a href="#m0">afterMethod</a></td><td rowspan="1">1692805272822</td><td rowspan="1">2</td></tr><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton</td><td><a href="#m1">orderAllocation</a></td><td rowspan="1">1692804894537</td><td rowspan="1">377565</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">WMS_InvCont_Batch_2.WMS_Add_Condition_Code</td><td><a href="#m0">afterMethod</a></td><td rowspan="1">1692953905051</td><td rowspan="1">5</td></tr><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">WMS_InvCont_Batch_2.WMS_Add_Condition_Code</td><td><a href="#m1">addAndRemoveCondition</a></td><td rowspan="1">1692953883875</td><td rowspan="1">20247</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton#afterMethod</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=orderAllocation status=FAILURE method=WMS_PST_MultisBag_Carton.orderAllocation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton@2fba3fc4] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+<h2>Default test</h2><h3 id="m0">WMS_InvCont_Batch_2.WMS_Add_Condition_Code#afterMethod</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=addAndRemoveCondition status=FAILURE method=WMS_Add_Condition_Code.addAndRemoveCondition(java.lang.String)[pri:0, instance:WMS_InvCont_Batch_2.WMS_Add_Condition_Code@4bf48f6] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;BYODIICU3LIGOWY&apos;, ip: &apos;192.168.0.112&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8&apos;
 Driver info: driver.version: RemoteWebDriver
@@ -58,17 +58,16 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton#orderAllocation</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th><th>Parameter #9</th><th>Parameter #10</th><th>Parameter #11</th><th>Parameter #12</th><th>Parameter #13</th><th>Parameter #14</th><th>Parameter #15</th><th>Parameter #16</th><th>Parameter #17</th><th>Parameter #18</th></tr><tr class="param stripe"><td>MB2407230001</td><td>MB2407230002</td><td>Minimum status:Released</td><td>Maximum status:Allocated</td><td>Status Description:Created</td><td>Status:Held For Tasking</td><td>Status description:Released</td><td>Status:Ready For Assignment</td><td>Status:Assigned</td><td>TOTEAJ90</td><td>TOTEAJ91</td><td>TOTEAJ92</td><td>MINDZOP0200237</td><td>CARTAJ91</td><td>CARTAJ92</td><td>Minimum status:Manifested</td><td>Minimum status:Shipped</td><td>Pack Station 1</td></tr><tr><th colspan="18">Exception</th></tr><tr><td colspan="18"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;MB2407230001&apos;)]/ancestor::div[contains(@class,&apos;dm-flex-col-layout&apos;)]/descendant::div[@class=&apos;priorityCircle ng-star-inserted&apos;]&quot;}
+<h3 id="m1">WMS_InvCont_Batch_2.WMS_Add_Condition_Code#addAndRemoveCondition</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>TOTEAJ77</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=116.0.5845.111)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;BYODIICU3LIGOWY&apos;, ip: &apos;192.168.0.112&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\bhn\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61668}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 511ee08b69fffc703266478f719c197f
-*** Element info: {Using=xpath, value=//a[contains(text(),&apos;MB2407230001&apos;)]/ancestor::div[contains(@class,&apos;dm-flex-col-layout&apos;)]/descendant::div[@class=&apos;priorityCircle ng-star-inserted&apos;]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\bhn\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51905}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e1bf5c8bc44771f9cf8261f5f4167a75
+*** Element info: {Using=xpath, value=//div[@alt=&apos;Logo&apos;]}
+	at jdk.internal.reflect.GeneratedConstructorAccessor34.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -82,8 +81,17 @@ Session ID: 511ee08b69fffc703266478f719c197f
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.WMS_ApplicationPages.WMS_OrdersPage.olpnreleaseStatusTwoOrders(WMS_OrdersPage.java:1617)
-	at WMS_PickSort_Batch_5.WMS_PST_MultisBag_Carton.orderAllocation(WMS_PST_MultisBag_Carton.java:203)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.toString(Unknown Source)
+	at java.base/java.lang.String.valueOf(String.java:4220)
+	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.toString(ExpectedConditions.java:305)
+	at java.base/java.lang.String.valueOf(String.java:4220)
+	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:268)
+	at com.WMS_ApplicationPages.WMS_LoginPage.verifyLogoExists(WMS_LoginPage.java:73)
+	at WMS_InvCont_Batch_2.WMS_Add_Condition_Code.addAndRemoveCondition(WMS_Add_Condition_Code.java:109)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
