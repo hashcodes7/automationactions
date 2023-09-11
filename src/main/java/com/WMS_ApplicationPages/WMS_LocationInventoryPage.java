@@ -84,9 +84,17 @@ public class WMS_LocationInventoryPage extends WMS_WebDriverUtilities {
 	@FindBy(xpath = "//*[text()=' Status : ']/ancestor::div[@class='dm-flex-row-layout field-row ng-star-inserted']/descendant::span")
 	public WebElement clickStatusRecord;
 	
-
-	@FindBy(xpath = "//*[text()=' Status : ']/ancestor::div[@tabindex='0']/descendant::span[@class='field-value ng-star-inserted'][5]")
-	public WebElement inventoryStatusElement;
+//As x-path is changed as part of CD 67
+	/*
+	 * @FindBy(xpath =
+	 * "//*[text()=' Status : ']/ancestor::div[@tabindex='0']/descendant::span[@class='field-value ng-star-inserted'][5]"
+	 * ) public WebElement inventoryStatusElement;
+	 */
+	
+	// 2167 25823
+//changes as part of 67
+    @FindBy(xpath = "//card-panel/div[1]/div/card-view/div/div[1]/div[1]")
+    public WebElement inventoryStatusElement;
 	
 	
 	@FindBy(xpath = "//*[contains(text(),'Location Inventory')]/ancestor::ion-list[@class='menu-no-padding md list-md hydrated']/descendant::button[2]")
@@ -122,6 +130,12 @@ public class WMS_LocationInventoryPage extends WMS_WebDriverUtilities {
 	
 	@FindBy(xpath = "//*[contains(text(),'Remove Conditions')]")
 	public WebElement insideremoveCondElement;
+	
+	@FindBy(xpath = "//*[text()='Count run ID ']/ancestor::div[@class='field-container no-padding']/descendant::ion-input/input")
+    public WebElement CCIDSearchElement;
+	
+	@FindBy(xpath = "//card-panel/div[1]/div/card-view/div/div[1]/ancestor::div[1]/descendant::a")
+	public WebElement getccidElement;
 	
 	
 	
@@ -456,5 +470,34 @@ public void insideRemoveCondbtn() {
 		js.executeScript("arguments[0].click();", insideremoveCondElement);
 		} 
 	}
+
+public void Cidsearch(String batchNo, WMS_DashboardPage dashboardPage) throws InterruptedException {
+
+    try {
+
+        new WebDriverWait(driver, 35).until(ExpectedConditions.visibilityOf(CCIDSearchElement));
+        enterText(CCIDSearchElement, batchNo);
+        pressEnterKey(CCIDSearchElement);
+        pressEnterKey(CCIDSearchElement);
+        dashboardPage.clickRefresh();
+        dashboardPage.clickRefresh();
+    
+    } catch (Exception e) {
+
+    }
+}
+
+public String getCCINumber() {
+
+    new WebDriverWait(driver, 35).until(ExpectedConditions.visibilityOf(getccidElement));
+    String taskGroupNo = getText(getccidElement);
+    System.out.println("Task Group Number is: " + taskGroupNo);
+
+
+
+    return taskGroupNo;
+}
+
+
 }
 

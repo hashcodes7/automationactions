@@ -80,6 +80,8 @@ public class WMS_OutboundManualSorter extends WMS_WebDriverUtilities {
 	@FindBy(xpath = "//*[contains(text(),'Locatio')]/ancestor::ion-item[@class='active item md in-list ion-focusable hydrated']/descendant::ion-col[@class='value md hydrated']")
 	public WebElement scanChaseElement;
 
+	@FindBy(xpath = "//*[contains(text(),'oLPN')]/ancestor::ion-item[contains(@class,'active item md item-lines')]/descendant::ion-col[@class='value md hydrated']")
+    public WebElement scanOlpnIdElement2;
 
 	///////////////////////////////////////////////// PAGE Methods
 	///////////////////////////////////////////////// //////////////////////////////////////////////////////////////
@@ -152,7 +154,25 @@ public class WMS_OutboundManualSorter extends WMS_WebDriverUtilities {
 		}
 
 	}
+	
+	public String getLocid() {
 
+        try {
+
+            new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(scanChaseElement));
+
+            String text = getText(scanChaseElement);
+            String DestinationLocationIdText = text.replaceAll("\\-", "");
+            System.out.println(DestinationLocationIdText);
+            return DestinationLocationIdText;
+
+        } catch (Exception e) {
+
+        }
+
+        driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+        return null;
+	}
 	public void clickCloseCubbyBtn() {
 		try {
 			new WebDriverWait(driver, 1).until(ExpectedConditions.visibilityOf(scanLocationIdElement));
@@ -261,4 +281,16 @@ public String enterOlpnSortALocationID() throws InterruptedException {
 		WaitforPage(4000);
 
 	}
+	public String enterOlpnSortALocationID2() throws InterruptedException {
+
+        new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(scanOlpnIdElement2));
+
+        String text1 = getText(scanOlpnIdElement2);
+
+        String DestinationLocationIdText = text1.replaceAll("\\-", "");
+
+        return text1;
+
+    }
+	
 }

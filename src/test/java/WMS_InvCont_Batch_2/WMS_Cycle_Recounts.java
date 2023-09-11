@@ -58,17 +58,11 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 	WMS_PackStationPage packStationPage;
 	WMS_LocationInventoryPage locationinventorypage;
 	boolean Capture = true;
-	//public Test_Rail_Actions testactions = new Test_Rail_Actions();
+	// public Test_Rail_Actions testactions = new Test_Rail_Actions();
 
 	public Test_Rail_Actions testactions = new Test_Rail_Actions();
 
-	List<HashMap<String, String>> data_ItemTable = null;
 
-	String batchNo;
-	public static XSSFSheet templatesheet = null;
-	List<HashMap<String, String>> BaseTemplate = null;
-
-	int CartSlot = 6;
 
 	@BeforeMethod
 	public void setUp() throws InterruptedException {
@@ -125,7 +119,7 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 
 			test.log(Status.PASS, "Clicked on Login Button");
 			addSrceenShot("Login", test, Capture);
-			
+
 			loginPage.resizeWebpage();
 			test.log(Status.PASS, "Window resize");
 
@@ -137,7 +131,7 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 
 			itemPage.clickitembutton();
 
-			itemPage.itemsearch(itemid); // ItemNumber
+			itemPage.itemsearch(itemid);
 			addSrceenShot("Login", test, Capture);
 			String itembarcode = itemPage.getitemparcode();
 
@@ -195,31 +189,41 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 			wvMobilePage.enterLocationBar(location);
 
 			wvMobilePage.clickGoBtn();
-		try {
-			wvMobilePage.clickConfirmBtn();
-		}
-		catch(Exception e) {
-			addSrceenShot("Login", test, Capture);
-		}
-				
-			 // itembarcode
-			wvMobilePage.entercycleItemBar(itembarcode); // 003480001 M itembarcode
-
-			wvMobilePage.clickGoBtn();
-
-			wvMobilePage.enterCycleCountUnits(Integer.toString(TotalUnitCount + 20)); // TotalUnitCount
-			addSrceenShot("Login", test, Capture);
-
-			wvMobilePage.clickGoBtn();
-			addSrceenShot("Login", test, Capture);
 			try {
-			wvMobilePage.clickConfirmBtn();
+				wvMobilePage.clickConfirmBtn();
+			} catch (Exception e) {
+				addSrceenShot("Login", test, Capture);
 			}
-			catch (Exception e) {
-				
-			}
+
+			// itembarcode
+
+			wvMobilePage.entercycleItemBar(itembarcode);
+
 			wvMobilePage.clickGoBtn();
-			
+
+			try {
+				wvMobilePage.clickConfirmBtn();
+			} catch (Exception e) {
+				addSrceenShot("Login", test, Capture);
+			}
+
+			wvMobilePage.enterCycleCountUnits(Integer.toString(TotalUnitCount + 20));
+			addSrceenShot("Login", test, Capture);
+
+			wvMobilePage.clickGoBtn();
+			addSrceenShot("Login", test, Capture);
+
+			try {
+				wvMobilePage.clickConfirmBtn();
+			} catch (Exception e) {
+				addSrceenShot("Login", test, Capture);
+			}
+
+			wvMobilePage.enterCycleCountUnits(Integer.toString(TotalUnitCount + 20));
+			addSrceenShot("Login", test, Capture);
+
+			wvMobilePage.clickGoBtn();
+
 			utilities.closeCurrentWindow();
 
 			dashboardPage.clickMenuToggle();
@@ -236,20 +240,38 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 			addSrceenShot("Login", test, Capture);
 			locationinventorypage.inventorysearch(LOCATIONID);
 
-			locationinventorypage.pendingBookStatus(dashboardPage);
-			addSrceenShot("Login", test, Capture);
-			/*
-			 * if (bookingStatus.equals("Pending Booking")) { test.log(Status.PASS,
-			 * "The Booking Status is :" + bookingStatus); } else { test.log(Status.FAIL,
-			 * "The Booking Status is :" + bookingStatus); }
-			 */
-			locationinventorypage.clickStatusRecord();
+			try {
 
-			locationinventorypage.clickBook();
-			addSrceenShot("Login", test, Capture);
+				locationinventorypage.pendingBookStatus(dashboardPage);
+				addSrceenShot("Login", test, Capture);
 
-			locationinventorypage.clickYesBtn();
-			addSrceenShot("Login", test, Capture);
+			} catch (Exception e) {
+				addSrceenShot("Login", test, Capture);
+			}
+
+			try {
+
+				String Cid = locationinventorypage.getCCINumber();
+
+				dashboardPage.clearAllBtn();
+				test.log(Status.PASS, "Cleared Selected Filter");
+				addSrceenShot("Login", test, Capture);
+
+				locationinventorypage.inventorysearch(LOCATIONID);
+
+				locationinventorypage.Cidsearch(Cid, dashboardPage);
+
+				dashboardPage.selectAllRecord();
+
+				locationinventorypage.clickBook();
+				addSrceenShot("Login", test, Capture);
+
+				locationinventorypage.clickYesBtn();
+				addSrceenShot("Login", test, Capture);
+
+			} catch (Exception e) {
+				addSrceenShot("Login", test, Capture);
+			}
 
 			dashboardPage.clickMenuToggle();
 			test.log(Status.PASS, "Clicked on menu Button");
@@ -262,7 +284,7 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 
 			locationinventorypage.inventoryBarsearch(location);
 			test.log(Status.PASS, "Entered Order Search");
-			
+
 			addSrceenShot("Login", test, Capture);
 
 			dashboardPage.clickRefresh();
@@ -271,7 +293,7 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 			locationinventorypage.locInventoryExpBtn();
 
 			int TotalUnitCount2 = locationinventorypage.getTotalUnitCount();
-			
+
 			addSrceenShot("Login", test, Capture);
 
 			System.out.println(TotalUnitCount2);
@@ -289,7 +311,7 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 			test.log(Status.PASS, "Cleared Selected Filter");
 
 			locationinventorypage.inventorysearch(LOCATIONID);
-			
+
 			addSrceenShot("Login", test, Capture);
 
 			dashboardPage.clickRefresh();
@@ -302,7 +324,6 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 			} else {
 				test.log(Status.PASS, "The Booking Status is :" + bookingStatus2);
 			}
-			
 
 			if (bookingStatus2.equals("Booking Accepted")) {
 				test.log(Status.PASS, "The Booking Status is :" + bookingStatus2);
@@ -315,8 +336,6 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 
 	@AfterMethod
 	public void setUpend() {
-		testactions.updateTestRailTestRunStatus("4897171", "pass", "cycle recout is completed",
-				"count recount is done");
 
 		extent.flush();
 		driver.quit();

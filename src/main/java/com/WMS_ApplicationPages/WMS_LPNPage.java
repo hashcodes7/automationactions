@@ -743,6 +743,18 @@ public void clickExpandBarLPN() {
 	       return text;
 	       
 	    }
+	 public String getIlpnsQty(String Ordernumber) throws InterruptedException {
+	        WaitforPage(5000);
+	        WebElement allocatedElement1 = driver.findElement(By.xpath("//*[contains(text(),'" + Ordernumber
+	                + "')]/ancestor::div[contains(@class,'dm-flex-row-layout dm-fill')]/descendant::div[11]/span[@class='field-value ng-star-inserted']"));
+
+	        String itemNo1 = getText(allocatedElement1);
+
+	        System.out.println(itemNo1);
+
+	        return itemNo1;
+	    }
+	 
 }
 
 

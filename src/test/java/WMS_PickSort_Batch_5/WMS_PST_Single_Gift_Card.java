@@ -93,8 +93,8 @@ public class WMS_PST_Single_Gift_Card extends WMS_TestBase {
 		}
 	}
 
-	@Test(priority = 0, dataProvider = "PickShort_Singles_Gift_Card", dataProviderClass = DataProviders.class)
-
+	@Test(priority = 0, dataProvider = "PickShort_Singles_bag", dataProviderClass = DataProviders.class)
+	//"PickShort_Singles_Gift_Card"
 	public void orderAllocation(String OrderNumber, String OrderNumber2, String CompleteSpecs, String CompleteSpecs2,
 			String CompleteSpecs3, String CompleteSpecs4, String CompleteSpecs5, String CompleteSpecs6,
 			String CompleteSpecs7, String TotUserKey, String LocationKey, String CARTKEY, String CompleteSpecs8,
@@ -1809,7 +1809,7 @@ public class WMS_PST_Single_Gift_Card extends WMS_TestBase {
 
 				systemmanagementpage.clickTranlogDetailsBtn();
 
-				systemmanagementpage.enterMesgPaySearch("SHC_ANY_ShipConfirm_Custom_LSCO");
+				systemmanagementpage.enterMesgPaySearch("SHC_ANY_ShipConfirm_Custom_QA");
 
 				systemmanagementpage.enterTranlogToteIDSearch(OrderNumber + ", " + OrderNumber2);
 

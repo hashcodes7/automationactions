@@ -419,6 +419,9 @@ public class WMS_WVMobilePage extends WMS_WebDriverUtilities {
 	@FindBy(xpath = "//span[@data-component-id='acceptreasoncode_lookuptextfield_presentlookupmodal']")
 	public WebElement clickReasoneDropDown;
 
+	
+	@FindBy(xpath = "//*[contains(text(),'Destination Location')]/ancestor::ion-item[contains(@class,'active item-has-start-slot item md item')]/descendant::ion-col[@class='value md hydrated']")
+    public WebElement scanDestinationLocationIdElement2;
 	@FindBy(xpath = "//*[contains(text(),' units')]")
 	public WebElement getQtysizeID;
 	/*
@@ -1959,5 +1962,17 @@ public class WMS_WVMobilePage extends WMS_WebDriverUtilities {
 				"document.querySelector(\"div > div.two-col-grid > modal-item:nth-child(3) > div:nth-child(2) > div > button > ion-icon\").shadowRoot.querySelector(\"div\").click();");
 				//"document.querySelector(\"div > add-cico-modal > modal-container > div > div > modal-content > form > div > div.two-col-grid > modal-item:nth-child(3) > div:nth-child(2) > div > button\").click();");
 	}
+	
+	// 2164-19723
+    public void enterDestinationLocationID2() {
+
+        String text = getText(scanDestinationLocationIdElement2);
+
+        String DestinationLocationIdText = text.replaceAll("\\-", "");
+        System.out.println(DestinationLocationIdText);
+
+        enterText(scanLocationElement, DestinationLocationIdText);
+
+    }
 
 }

@@ -8,13 +8,6 @@
       </run>
     </groups>
     <classes>
-      <class name="WMS_SinglesPackSort_Batch_8.WMS_PackSort_Single_Export">
-        <methods>
-          <include name="setUpend"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- WMS_SinglesPackSort_Batch_8.WMS_PackSort_Single_Export -->
       <class name="WMS_SinglesPackSort_Batch_8.WMS_PackSort_Singles_Cartons">
         <methods>
           <include name="orderAllocation" invocation-numbers="0"/>
@@ -22,13 +15,13 @@
           <include name="setUpend"/>
         </methods>
       </class> <!-- WMS_SinglesPackSort_Batch_8.WMS_PackSort_Singles_Cartons -->
-      <class name="WMS_SinglesPackSort_Batch_8.WMS_PackSort_Single_Bag">
+      <class name="WMS_SinglesPackSort_Batch_8.WMS_PackSort_Single_Export">
         <methods>
-          <include name="orderAllocation" invocation-numbers="0"/>
           <include name="setUpend"/>
+          <include name="orderAllocation" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- WMS_SinglesPackSort_Batch_8.WMS_PackSort_Single_Bag -->
+      </class> <!-- WMS_SinglesPackSort_Batch_8.WMS_PackSort_Single_Export -->
     </classes>
   </test> <!-- PackShort_Orders(failed) -->
 </suite> <!-- Failed suite [Batch_8] -->

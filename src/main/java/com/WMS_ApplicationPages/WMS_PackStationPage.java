@@ -175,7 +175,7 @@ public class WMS_PackStationPage extends WMS_WebDriverUtilities {
 	
 	@FindBy(xpath = "//div[@class='input-box light']/*//input[@class='native-input sc-ion-input-md']")
     public WebElement clickpackStationElement;
-
+	
 	@FindBy(xpath = "//*[text()=' Priority : ']")
 	public WebElement clickonerecord;
 
@@ -224,6 +224,9 @@ public class WMS_PackStationPage extends WMS_WebDriverUtilities {
 
 	@FindBy(xpath = " ORDER DETAILS ")
 	public WebElement clickdropPage;
+	
+	@FindBy(xpath = "//*[text()='Weigh and Manifest oLPN']")
+    public WebElement WmanifetateOLPNElement;
 
 	///////////////////////////////////////////////// PAGE Methods
 	///////////////////////////////////////////////// //////////////////////////////////////////////////////////////
@@ -857,6 +860,19 @@ try {
 		WaitforPage(5000);
 	}
 
+	public void clickPackStation() throws InterruptedException {
+
+        try {
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(objPackstation));
+            clickElement(clickpackStationElement);
+
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", clickpackStationElement);
+        }
+
+    }
 	public void dropdownCurrentPage() throws InterruptedException, AWTException {
 
 		Thread.sleep(3000);
@@ -884,6 +900,21 @@ try {
         } catch (Exception e) {
 
         }
+    }
+	
+	// 2164-19723
+    public void clickWeighManifest2() throws InterruptedException {
+
+        try {
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(WmanifetateOLPNElement));
+            clickElement(WmanifetateOLPNElement);
+
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", WmanifetateOLPNElement);
+        }
+
     }
 
 }

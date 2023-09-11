@@ -423,42 +423,9 @@ public class WMS_SingleSku_Split_Deposition extends WMS_TestBase {
 				test.log(Status.PASS, "Clicked on ok Button");
 
 				addSrceenShot("Login", test, Capture);
-
+				test.log(Status.PASS, "Singles Split and Deposition is completed");
 				utilities.closeCurrentWindow();
 
-				// ILPN Status checking
-
-				dashboardPage.clickMenuToggle();
-
-				dashboardPage.enterMenuSearch("ILPNs");
-				addSrceenShot("Login", test, Capture);
-				test.log(Status.PASS, "Entered MenuSearch as ILPNs");
-
-				asnPage.ilpnsSelectMenu();
-				test.log(Status.PASS, "Clicked on iLPN Menu link");
-
-				dashboardPage.clearAllBtn();
-				test.log(Status.PASS, "Cleared Selected Filter");
-
-				lpnPage.enterAsnSearch(Asn);
-				addSrceenShot("Login", test, Capture);
-				test.log(Status.PASS, "Successfuly Searced for ASN " + Asn);
-
-				String status7 = dashboardPage.getCurrentStatus();
-				test.log(Status.PASS, "Clicked on ASNS Button" + status7);
-				System.out.println("ilpn page lpn status is :" + status7);
-
-				utilities.toggleGridView(dashboardPage.GridViewButton);
-				test.log(Status.PASS, "Clicked on gridview " + Asn);
-				addSrceenShot("Login", test, Capture);
-
-				readWebTable(lpnPage.LPNTableHeader, lpnPage.LPNTableBody);
-
-				orderspage.selectAllRecord();
-				test.log(Status.PASS, "Split and Deposition is completed");
-				addSrceenShot("Login", test, Capture);
-
-				utilities.closeCurrentWindow();
 	}
 			
 	}

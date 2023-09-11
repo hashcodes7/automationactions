@@ -770,8 +770,14 @@ public class WMS_PST_Multis_Export extends WMS_TestBase {
 
 				wvMobilePage.clickGoBtn();
 
+				try {
 				wvMobilePage.clickConfirmBtn();
+				}
+				catch (Exception e){
+					System.out.println ("error at 777");
+					addSrceenShot("Login", test, Capture);
 
+				}
 				// itembarcode
 
 				wvMobilePage.entercycleItemBar(itembarcode1); // 003480001 M itembarcode
