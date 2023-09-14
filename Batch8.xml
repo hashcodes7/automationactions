@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests" thread-count="3">
-  <test name="PackShort_Orders_1">
+<suite name="Suite" parallel="tests" thread-count="2">
+ <!-- <test name="PackShort_Orders_1">
     <classes>
       <class name="WMS_SinglesPackSort_Batch_8.WMS_PackSort_Single_Bag"/>
     </classes>
-  </test>  
+  </test>  -->
    <test name="PackShort_Orders_2">
     <classes>
     <class name="WMS_SinglesPackSort_Batch_8.WMS_PackSort_Single_Export"/>

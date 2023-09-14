@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="WMS_SingsOrd_Batch_3.WMS_Single_Bag_GC">
+      <class name="WMS_InvCont_Batch_2.WMS_Add_Condition_Code">
         <methods>
+          <include name="addAndRemoveCondition" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="tearDown"/>
           <include name="CreateSummary"/>
           <include name="setUpend"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- WMS_SingsOrd_Batch_3.WMS_Single_Bag_GC -->
+      </class> <!-- WMS_InvCont_Batch_2.WMS_Add_Condition_Code -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

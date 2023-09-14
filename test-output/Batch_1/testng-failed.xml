@@ -8,20 +8,13 @@
       </run>
     </groups>
     <classes>
-      <class name="WMS_Inbound_Batch_1.WMS_LPN_Multi_SKU">
-        <methods>
-          <include name="setUp"/>
-          <include name="ASNExecuteCart" invocation-numbers="0"/>
-          <include name="setUpend"/>
-        </methods>
-      </class> <!-- WMS_Inbound_Batch_1.WMS_LPN_Multi_SKU -->
-      <class name="WMS_Inbound_Batch_1.WMS_SingleSku_Split_Deposition">
+      <class name="WMS_Inbound_Batch_1.WMS_MultiSku_Split_Deposition">
         <methods>
           <include name="setUpend"/>
           <include name="ASNExecuteCart" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- WMS_Inbound_Batch_1.WMS_SingleSku_Split_Deposition -->
+      </class> <!-- WMS_Inbound_Batch_1.WMS_MultiSku_Split_Deposition -->
     </classes>
   </test> <!-- Inbound(failed) -->
 </suite> <!-- Failed suite [Batch_1] -->
