@@ -10,10 +10,10 @@
       <class name="WMS_SingsOrd_Batch_3.WMS_Single_Bag_GC"/>
       <class name="WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One"/>   
      <class name="WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Three"/>
-     <!-- <class name="WMS_SingsOrd_Batch_3.WMS_Single_Gift_Wrap"/>
+     <class name="WMS_SingsOrd_Batch_3.WMS_Single_Gift_Wrap"/>
        <class name="WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_Two"/>
  <class name="WMS_SingsOrd_Batch_3.WMS_Single_Export"/>  
-         <class name="WMS_SingsOrd_Batch_3.WMS_Singles_GiftCard_Order"/>-->
+         <class name="WMS_SingsOrd_Batch_3.WMS_Singles_GiftCard_Order"/>
       
     </classes>
 </test>

@@ -12,7 +12,7 @@
    <class name="WMS_TimeDate_Batch_6.WMS_Printing_Journal"/>
     <class name="WMS_TimeDate_Batch_6.WMS_Ship_Confirmation"/>
        <class name="WMS_TimeDate_Batch_6.WMS_Alternate_Pick_Location"/>
-   <!-- <class name="WMS_TimeDate_Batch_6.WMS_Fill_and_Kill"/>-->
+   <class name="WMS_TimeDate_Batch_6.WMS_Fill_and_Kill"/>
      <class name="WMS_TimeDate_Batch_6.WMS_Parcel_End_of_The_Day"/>
       
       
