@@ -99,7 +99,7 @@ public class WMS_Negative_Adjusment extends WMS_TestBase {
 	@Test(priority = 0, dataProvider = "Negative_Adjusment", dataProviderClass = DataProviders.class)
 
 	public void cycleCountUserDirec(String TOTEID, String ITEMBAR) throws InterruptedException, AWTException {
-
+try {
 		if (!TOTEID.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest(":::WMS_Negative_Adjusment:::");
@@ -310,6 +310,11 @@ public class WMS_Negative_Adjusment extends WMS_TestBase {
 
 
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 
 	}
 

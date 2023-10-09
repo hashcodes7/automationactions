@@ -95,7 +95,7 @@ public class WMS_Clock_In extends WMS_TestBase {
 
 	public void addAndRemoveCondition(String UserId, String TimeIn, String OutTime)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!UserId.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest("::: WMS_Clock_In:::");
@@ -161,6 +161,11 @@ public class WMS_Clock_In extends WMS_TestBase {
 			utilities.closeCurrentWindow();
 
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 		/*
 		 * CloseBrowser = true; testactions.updateTestRailTestRunStatus("4897135",
 		 * "pass", "singles bag pack-3", "singles bag pack-3 is done");

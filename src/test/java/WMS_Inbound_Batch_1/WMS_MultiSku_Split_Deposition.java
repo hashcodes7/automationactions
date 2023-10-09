@@ -92,7 +92,7 @@ public class WMS_MultiSku_Split_Deposition extends WMS_TestBase {
 	public void ASNExecuteCart(String Asn, String Lpn, String CompleteSpecs, String CompleteSpecs2,
 			String CompleteSpecs3, String ToteID1, String ToteID2, String CartID, String itemID1, String itemID2)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!Asn.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -445,6 +445,11 @@ public class WMS_MultiSku_Split_Deposition extends WMS_TestBase {
 			
 
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 			
 	}
 

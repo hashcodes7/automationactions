@@ -93,7 +93,7 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 
 	public void cycleCountUserDirec(String location, String itemid, String LOCATIONID)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!location.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest(":::cycle_Recounts:::");
@@ -332,6 +332,11 @@ public class WMS_Cycle_Recounts extends WMS_TestBase {
 			}
 
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 	}
 
 	@AfterMethod

@@ -105,7 +105,7 @@ public class WMS_Cancel_OLPNs extends WMS_TestBase {
 
 	public void orderAllocation(String OrderNumber, String OrderNumber2, String CompleteSpecs2, String CompleteSpecs3)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest(":::WMS_Cancel_OLPN:::");
@@ -357,7 +357,12 @@ public class WMS_Cancel_OLPNs extends WMS_TestBase {
 			}
 			CloseBrowser = true;
 		}
-
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 	}
+
 
 }

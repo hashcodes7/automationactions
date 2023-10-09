@@ -101,7 +101,7 @@ public class WMS_Multiple_Bag_Generate_Cartons extends WMS_TestBase {
 			String CompleteSpecs7, String TotUserKey, String TotUserKey2, String LocationKey, String CARTKEY,
 			String CompleteSpecs8, String CompleteSpecs9, String PackStation)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -2045,6 +2045,11 @@ public class WMS_Multiple_Bag_Generate_Cartons extends WMS_TestBase {
 		}
 
 		System.out.println("The Execution is finished -: WMS_Multi_Bag_G_Catrton");
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 
 	}
 

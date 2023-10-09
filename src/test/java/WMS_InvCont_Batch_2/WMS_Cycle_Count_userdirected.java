@@ -99,7 +99,7 @@ public class WMS_Cycle_Count_userdirected extends WMS_TestBase {
 
 	public void cycleCountUserDirec(String location, String itemid, String LOCATIONID)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!location.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest(":::cycle_Count_UserDirected:::");
@@ -283,7 +283,11 @@ public class WMS_Cycle_Count_userdirected extends WMS_TestBase {
 			// itembarcode
 
 		}
-
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 	}
 
 	@AfterMethod

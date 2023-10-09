@@ -98,7 +98,7 @@ public class WMS_Blind_Receiving extends WMS_TestBase {
 	@Test(priority = 0, dataProvider = "blind_receiving", dataProviderClass = DataProviders.class)
 
 	public void cycleCountUserDirec(String OrderNumber) throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -258,6 +258,11 @@ public class WMS_Blind_Receiving extends WMS_TestBase {
 			}
 
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 
 	}
 

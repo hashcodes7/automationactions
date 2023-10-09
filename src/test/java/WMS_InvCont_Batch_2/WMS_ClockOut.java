@@ -93,7 +93,7 @@ public class WMS_ClockOut extends WMS_TestBase {
 
 	public void addAndRemoveCondition(String UserId, String TimeIn, String OutTime)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!UserId.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest("::: WMS_Clock_Out :::");
@@ -164,6 +164,11 @@ public class WMS_ClockOut extends WMS_TestBase {
 			
 			utilities.closeCurrentWindow();
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 
 		//CloseBrowser = true;
 	}

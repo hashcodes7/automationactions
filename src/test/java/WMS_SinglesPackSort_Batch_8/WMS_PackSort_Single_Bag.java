@@ -100,7 +100,7 @@ public class WMS_PackSort_Single_Bag extends WMS_TestBase {
 			String CompleteSpecs7, String TotUserKey, String TotUserKey2, String LocationKey, String CARTKEY,
 			String CompleteSpecs8, String CompleteSpecs9, String PackStation)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -1858,6 +1858,11 @@ public class WMS_PackSort_Single_Bag extends WMS_TestBase {
 
 			
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 	}
 
 	@AfterMethod

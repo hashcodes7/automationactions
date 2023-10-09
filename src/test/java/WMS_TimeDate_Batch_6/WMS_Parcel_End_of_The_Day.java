@@ -89,7 +89,7 @@ public class WMS_Parcel_End_of_The_Day extends WMS_TestBase {
 	@Test(priority = 0, dataProvider = "ParcelEnd_of_TheDay", dataProviderClass = DataProviders.class)
 
 	public void orderAllocation(String CarrierServer, String parceEndDate) throws InterruptedException, AWTException {
-
+try {
 		if (!CarrierServer.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest(":::WMS_Parcel_End_of_The_Day:::");
@@ -258,6 +258,11 @@ public class WMS_Parcel_End_of_The_Day extends WMS_TestBase {
 			// .................................total time........................//
 			// ...........................................................//
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 			}
 
 	@AfterMethod

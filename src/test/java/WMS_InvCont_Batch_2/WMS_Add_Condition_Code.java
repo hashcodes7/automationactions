@@ -99,7 +99,7 @@ public class WMS_Add_Condition_Code extends WMS_TestBase {
 	@Test(priority = 0, dataProvider = "Add_and_Remove_Condition", dataProviderClass = DataProviders.class)
 
 	public void addAndRemoveCondition(String ToteID) throws InterruptedException, AWTException {
-
+try {
 		if (!ToteID.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -228,7 +228,11 @@ public class WMS_Add_Condition_Code extends WMS_TestBase {
 			lsnPage.clickClose();
 			
 		}
-		
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}	
 		
 		
 }

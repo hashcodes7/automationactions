@@ -97,7 +97,7 @@ public class WMS_Multis_Gift_Card_PackShort extends WMS_TestBase {
 			String TotUserKey3,String TotUserKey4,String LocationKey, String CartUserKey1,String CartUserKey2,String CompleteSpecs8,String CompleteSpecs9,
 			String PackStation, String sortloc1, String sortloc2, String chasewall)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -1943,6 +1943,11 @@ public class WMS_Multis_Gift_Card_PackShort extends WMS_TestBase {
 					" < Testcase execution completed  >  : " + " < WMS_Multis_Gift_Card_PackShort_Putwall_Exception > "
 							+ "Execution completed time :  " + GetTime211);
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 	}
 
 	@AfterMethod

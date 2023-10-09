@@ -94,7 +94,7 @@ public class WMS_PackSort_MultiBag_Corton extends WMS_TestBase {
 			String LocationKey, String CartUserKey1, String CartUserKey2, String CompleteSpecs8, String CompleteSpecs9,
 			String PackStation, String sortloc1, String sortloc2, String chasewall)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -2114,6 +2114,11 @@ public class WMS_PackSort_MultiBag_Corton extends WMS_TestBase {
 				// .................................total time........................//
 
 			}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 		}
 
 	

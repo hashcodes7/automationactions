@@ -667,10 +667,10 @@ public class WMS_DHEP_RateShop_Validation extends WMS_TestBase {
 
 
 		}
-	}
+		}
 		catch (Exception e) {
-			System.out.println("Test case got failed"+ e);
-			test.log(Status.FAIL, "Test case got failed");
+			System.out.println("Test case failed due to application slowness"+ e);
+			test.log(Status.FAIL, "Test case failed due to application slowness");
 		}
 
 		

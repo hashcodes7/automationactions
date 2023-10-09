@@ -89,7 +89,7 @@ public class WMS_PST_MultisBagCarton_1Slot extends WMS_TestBase {
 			String CompleteSpecs7, String TotUserKey, String TotUserKey2, String LocationKey,
 			String CARTKEY, String CompleteSpecs8, String CompleteSpecs9, String PackStation)
 			throws InterruptedException, AWTException {
-		
+	try {	
 		
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
@@ -1873,6 +1873,11 @@ public class WMS_PST_MultisBagCarton_1Slot extends WMS_TestBase {
 			test.log(Status.PASS, " < Testcase execution completed  >  : " + " < B5_TC02_PickShort_MultiBag_Corton > "
 					+ "Execution completed time :  " + GetTime211);
 		}
+	}
+	catch (Exception e) {
+		System.out.println("Test case failed due to application slowness"+ e);
+		test.log(Status.FAIL, "Test case failed due to application slowness");
+	}
 
 	}
 

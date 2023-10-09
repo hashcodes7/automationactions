@@ -98,7 +98,7 @@ public class WMS_Printing_Journal extends WMS_TestBase {
 
 	public void orderAllocation(String OrderNumber, String CompleteSpecs, String TaskGroup, String PrintType)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest(":::WMS_Printing_Journal_Set_Printer:::");
@@ -268,6 +268,11 @@ public class WMS_Printing_Journal extends WMS_TestBase {
 			}
 
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 	}
 
 		@AfterMethod

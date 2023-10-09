@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="WMS_InvCont_Batch_2.WMS_Cycle_Recounts">
+      <class name="WMS_TimeDate_Batch_6.WMS_Alernate_Pick_Location">
         <methods>
           <include name="afterMethod"/>
           <include name="tearDown"/>
-          <include name="CreateSummary"/>
-          <include name="cycleCountUserDirec" invocation-numbers="0"/>
-          <include name="setUp"/>
           <include name="setUpend"/>
+          <include name="setUp"/>
+          <include name="CreateSummary"/>
+          <include name="orderAllocation" invocation-numbers="0"/>
         </methods>
-      </class> <!-- WMS_InvCont_Batch_2.WMS_Cycle_Recounts -->
+      </class> <!-- WMS_TimeDate_Batch_6.WMS_Alernate_Pick_Location -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

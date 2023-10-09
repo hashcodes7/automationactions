@@ -100,7 +100,7 @@ public class WMS_PST_Singles_Gift_Wrap extends WMS_TestBase {
 			String CompleteSpecs3, String CompleteSpecs4, String CompleteSpecs5, String CompleteSpecs6,
 			String CompleteSpecs7, String TotUserKey, String LocationKey, String CARTKEY, String CompleteSpecs8,
 			String CompleteSpecs9, String PackStation) throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest(":::B5_TC06_PickShort_Singles_Gift_Wrap:::");
@@ -1884,6 +1884,11 @@ public class WMS_PST_Singles_Gift_Wrap extends WMS_TestBase {
 
 			
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 	}
 
 	@AfterMethod

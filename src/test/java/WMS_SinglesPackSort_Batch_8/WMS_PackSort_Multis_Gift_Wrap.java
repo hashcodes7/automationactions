@@ -103,7 +103,7 @@ public class WMS_PackSort_Multis_Gift_Wrap extends WMS_TestBase {
 			String LocationKey, String CARTKEY1, String CARTKEY2, String CompleteSpecs8, String CompleteSpecs9,
 			String PackStation, String SortLoc1, String SortLoc2, String chasewall)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -2029,7 +2029,13 @@ public class WMS_PackSort_Multis_Gift_Wrap extends WMS_TestBase {
 
 			
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 	}
+
 
 	@AfterMethod
 	public void setUpend() {

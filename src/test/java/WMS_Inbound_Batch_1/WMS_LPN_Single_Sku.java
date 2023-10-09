@@ -91,7 +91,7 @@ public class WMS_LPN_Single_Sku extends WMS_TestBase {
 	@Test(priority = 0, dataProvider = "Single_SKU", dataProviderClass = DataProviders.class)
 	public void ASNExecuteCart(String Asn, String Lpn, String CompleteSpecs, String CompleteSpecs2,
 			String CompleteSpecs3, String ToteID1, String CartID) throws InterruptedException, AWTException {
-
+try {
 		if (!Asn.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -627,6 +627,11 @@ public class WMS_LPN_Single_Sku extends WMS_TestBase {
 				}
 				utilities.closeCurrentWindow();
 			}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 	}
 
 

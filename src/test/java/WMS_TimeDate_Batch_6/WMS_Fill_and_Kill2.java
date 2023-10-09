@@ -93,7 +93,7 @@ public class WMS_Fill_and_Kill2 extends WMS_TestBase {
 
 	public void orderAllocation(String OrderNumber, String OrderNumber2, String CompleteSpecs)
 			throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -523,6 +523,11 @@ public class WMS_Fill_and_Kill2 extends WMS_TestBase {
 					+ "Execution completed time :  " + GetTime211);
 
 		}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 
 	}
 

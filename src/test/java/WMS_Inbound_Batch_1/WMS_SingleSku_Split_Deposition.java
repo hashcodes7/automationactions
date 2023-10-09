@@ -91,7 +91,7 @@ public class WMS_SingleSku_Split_Deposition extends WMS_TestBase {
 	@Test(priority = 0, dataProvider = "Single_SKU_SC", dataProviderClass = DataProviders.class)
 	public void ASNExecuteCart(String Asn, String Lpn, String CompleteSpecs, String CompleteSpecs2,
 			String CompleteSpecs3, String ToteID1, String CartID) throws InterruptedException, AWTException {
-
+try {
 		if (!Asn.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -427,6 +427,11 @@ public class WMS_SingleSku_Split_Deposition extends WMS_TestBase {
 				utilities.closeCurrentWindow();
 
 	}
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 			
 	}
 

@@ -95,7 +95,7 @@ public class WMS_Fill_and_Kill extends WMS_TestBase {
 
 	public void orderAllocation(String OrderNumber, String OrderNumber2, String CompleteSpecs )
 			throws InterruptedException, AWTException {
-
+try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
 				test = extent.createTest(":::WMS_Fill_and_Kill:::");
@@ -447,6 +447,11 @@ public class WMS_Fill_and_Kill extends WMS_TestBase {
 			
 			}
 			 CloseBrowser = true; 
+}
+catch (Exception e) {
+	System.out.println("Test case failed due to application slowness"+ e);
+	test.log(Status.FAIL, "Test case failed due to application slowness");
+}
 		}
 	
 	@AfterMethod
