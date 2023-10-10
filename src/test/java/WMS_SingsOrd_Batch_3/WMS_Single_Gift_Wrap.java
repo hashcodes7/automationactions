@@ -519,6 +519,9 @@ try {
 				test.log(Status.PASS, "Entered Username");
 				addSrceenShot("Login", test, Capture);
 
+				taskspage.clickRefresh();
+				test.log(Status.PASS, "Page refresh completed");
+				
 				taskspage.selectonetaskRC();
 				test.log(Status.PASS, "selected single order tab");
 				addSrceenShot("Login", test, Capture);

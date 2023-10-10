@@ -2,83 +2,123 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-28T18:06:52 IST" name="Default suite" finished-at="2023-09-28T19:21:33 IST" duration-ms="4481339">
+  <suite started-at="2023-10-09T20:30:32 IST" name="Default suite" finished-at="2023-10-09T21:04:07 IST" duration-ms="2014386">
     <groups>
-      <group name="Rateshop">
-        <method signature="WMS_FGHD_RateShop_Validation.orderAllocation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation@4bf48f6]" name="orderAllocation" class="WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation"/>
-      </group> <!-- Rateshop -->
+      <group name="Single_Orders">
+        <method signature="WMS_SingleBag_Pack_One.orderAllocation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One@4bf48f6]" name="orderAllocation" class="WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One"/>
+      </group> <!-- Single_Orders -->
     </groups>
-    <test started-at="2023-09-28T18:06:52 IST" name="Default test" finished-at="2023-09-28T19:21:33 IST" duration-ms="4481339">
-      <class name="WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation">
-        <test-method is-config="true" signature="CreateSummary()[pri:0, instance:WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation@4bf48f6]" started-at="2023-09-28T18:06:52 IST" name="CreateSummary" finished-at="2023-09-28T18:06:52 IST" duration-ms="21" status="PASS">
+    <test started-at="2023-10-09T20:30:32 IST" name="Default test" finished-at="2023-10-09T21:04:07 IST" duration-ms="2014386">
+      <class name="WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One">
+        <test-method is-config="true" signature="CreateSummary()[pri:0, instance:WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One@4bf48f6]" started-at="2023-10-09T20:30:32 IST" name="CreateSummary" finished-at="2023-10-09T20:30:32 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateSummary -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation@4bf48f6]" started-at="2023-09-28T18:06:53 IST" name="setUp" finished-at="2023-09-28T18:07:09 IST" duration-ms="16048" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One@4bf48f6]" started-at="2023-10-09T20:30:33 IST" name="setUp" finished-at="2023-10-09T20:30:50 IST" duration-ms="16844" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="orderAllocation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation@4bf48f6]" started-at="2023-09-28T18:07:09 IST" name="orderAllocation" data-provider="FGHD_RateShop_Validation" finished-at="2023-09-28T19:21:30 IST" duration-ms="4460698" status="PASS">
+        <test-method signature="orderAllocation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One@4bf48f6]" started-at="2023-10-09T20:30:50 IST" name="orderAllocation" data-provider="SinglesBagOrder_PackStation_One" finished-at="2023-10-09T21:04:03 IST" duration-ms="1993253" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[FGHD230926121000]]>
+                <![CDATA[SBA4231005170121]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Minimum status:Released]]>
+                <![CDATA[SBA4231005170123]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Maximum status:Allocated]]>
+                <![CDATA[Minimum status:Released]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Status Description:Created]]>
+                <![CDATA[Maximum status:Allocated]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Status:Held For Tasking]]>
+                <![CDATA[Status Description:Created]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Status description:Released]]>
+                <![CDATA[Status:Held For Tasking]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[FGHD]]>
+                <![CDATA[Status description:Released]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Status:Ready For Assignment]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Status:Assigned]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[TOTEKJ01]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[MINDZOP0200237]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[CARTKJ01]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Minimum status:Manifested]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Minimum status:Shipped]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Pack Station 1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- orderAllocation -->
-        <test-method is-config="true" signature="setUpend()[pri:0, instance:WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation@4bf48f6]" started-at="2023-09-28T19:21:30 IST" name="setUpend" finished-at="2023-09-28T19:21:33 IST" duration-ms="3284" status="PASS">
+        <test-method is-config="true" signature="setUpend()[pri:0, instance:WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One@4bf48f6]" started-at="2023-10-09T21:04:03 IST" name="setUpend" finished-at="2023-10-09T21:04:07 IST" duration-ms="3258" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpend -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation@4bf48f6]" started-at="2023-09-28T19:21:33 IST" name="afterMethod" finished-at="2023-09-28T19:21:33 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One@4bf48f6]" started-at="2023-10-09T21:04:07 IST" name="tearDown" finished-at="2023-10-09T21:04:07 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One@4bf48f6]" started-at="2023-10-09T21:04:07 IST" name="afterMethod" finished-at="2023-10-09T21:04:07 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=orderAllocation status=SUCCESS method=WMS_FGHD_RateShop_Validation.orderAllocation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation@4bf48f6] output={null}]]]>
+                <![CDATA[[TestResult name=orderAllocation status=SUCCESS method=WMS_SingleBag_Pack_One.orderAllocation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One@4bf48f6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation@4bf48f6]" started-at="2023-09-28T19:21:33 IST" name="tearDown" finished-at="2023-09-28T19:21:33 IST" duration-ms="15" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- WMS_Valid_Batch_7.WMS_FGHD_RateShop_Validation -->
+      </class> <!-- WMS_SingsOrd_Batch_3.WMS_SingleBag_Pack_One -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

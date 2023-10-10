@@ -488,6 +488,9 @@ public class WMS_PST_MultisBagCarton_1Slot extends WMS_TestBase {
 
 			taskspage.enterCurrentUser(USERNAME);
 			test.log(Status.PASS, "Entered Username");
+			
+			taskspage.clickRefresh();
+			test.log(Status.PASS, "Page refresh completed");
 
 			taskspage.selectonetaskRC();
 			test.log(Status.PASS, "selected single order tab");
@@ -979,6 +982,9 @@ public class WMS_PST_MultisBagCarton_1Slot extends WMS_TestBase {
 			taskspage.enterCurrentUser(USERNAME);
 			test.log(Status.PASS, "Entered Username");
 
+			taskspage.clickRefresh();
+			test.log(Status.PASS, "Page refresh completed");
+			
 			taskspage.selectonetaskRC();
 			test.log(Status.PASS, "selected single order tab");
 			addSrceenShot("Login", test, Capture);

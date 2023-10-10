@@ -101,6 +101,9 @@ public class WMS_TasksPage extends WMS_WebDriverUtilities {
 	@FindBy(xpath = "//*[text()='Order ']")
 	public WebElement objOrderElememt; 
 	
+	@FindBy(xpath = "//ion-button[@title='Refresh']")
+	public WebElement refreshElement;
+	
 	
 	@FindBy(xpath = "//ion-button[@data-component-id='com-manh-cp-dcorder-Order--more-actions']")
 	public WebElement boxthreedots;
@@ -278,6 +281,21 @@ public class WMS_TasksPage extends WMS_WebDriverUtilities {
 
 	}
 	
+	public void clickRefresh() {
+		try {
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(refreshElement));
+			clickElement(refreshElement);
+			
+		} catch (Exception e) {
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", refreshElement);
+			
+		}
+
+	}
+	
 public void TasksPageStatus(WMS_DashboardPage dashboardPage) throws InterruptedException {
 	
 	
@@ -401,7 +419,7 @@ public void selectStatusBtn(String text) throws InterruptedException {
 		try {
 			new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOf(clicktaskrecord));
 			clickElement(clicktaskrecord);
-
+			
 		} catch (Exception e) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", clicktaskrecord);

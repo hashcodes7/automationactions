@@ -507,6 +507,9 @@ try {
 
 				taskspage.enterCurrentUser(USERNAME);
 				test.log(Status.PASS, "Entered Username");
+				
+				taskspage.clickRefresh();
+				test.log(Status.PASS, "Page refresh completed");
 
 				taskspage.selectonetaskRC();
 				test.log(Status.PASS, "selected single order tab");
@@ -1063,6 +1066,9 @@ try {
 				taskspage.enterCurrentUser(USERNAME);
 				test.log(Status.PASS, "Entered Username");
 
+				taskspage.clickRefresh();
+				test.log(Status.PASS, "Page refresh completed");
+				
 				taskspage.selectonetaskRC();
 				test.log(Status.PASS, "selected single order tab");
 				addSrceenShot("Login", test, Capture);
