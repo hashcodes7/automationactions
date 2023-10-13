@@ -302,7 +302,7 @@ driver.findElement(By.id("open-tab")).sendKeys(n);
 
 	public void CreateSummary() {
 
-		System.out.println("Statrting test");
+		System.out.println("Starting test");
 
 
 	}
