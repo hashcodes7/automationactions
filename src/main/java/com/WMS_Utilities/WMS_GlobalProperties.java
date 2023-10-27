@@ -10,7 +10,7 @@ public interface WMS_GlobalProperties {
 	String FILENAME="WMS_TestData.xlsx";
 	String FILENAMESECOUND="WMS_TestData_Secound.xlsx";
 	String FILENAMEFIRST="WMS_TestData_One.xlsx";
-	String USERNAME="qabhn";//"qanbattina";//"qabhn";//"qanbattina";
+	String USERNAME="qabmanjusha";//"qanbattina";//"qabhn";//"qanbattina";
 	String PASSWORD="Levi@123";//"Levi#2017qa";//"Qabhn@123";//"Levi#2017qa";
     String MESSAGETEMPLATEFILENAME="MessageMap.xlsx";
     String URLTimeScreenSots="https://time.is/India";
