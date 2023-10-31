@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="WMS_TimeDate_Batch_6.WMS_Alernate_Pick_Location">
+      <class name="WMS_PickSort_Batch_5.WMS_PST_Single_Gift_Card">
         <methods>
           <include name="afterMethod"/>
           <include name="tearDown"/>
-          <include name="setUpend"/>
-          <include name="setUp"/>
           <include name="CreateSummary"/>
-          <include name="orderAllocation" invocation-numbers="0"/>
+          <include name="setUpend"/>
+          <include name="orderAllocation"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- WMS_TimeDate_Batch_6.WMS_Alernate_Pick_Location -->
+      </class> <!-- WMS_PickSort_Batch_5.WMS_PST_Single_Gift_Card -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -198,7 +198,7 @@ public class WMS_OrdersPage extends WMS_WebDriverUtilities {
 	@FindBy(xpath = "//*[text()=' Select All Rows ']")
 	public WebElement clickAllRecordElement;
 
-	@FindBy(xpath = "//*[text()='RUN ']")
+	@FindBy(xpath = "//*[text()='RUN CHASE ']")
 	public WebElement clickChasewaveelement;
 
 	@FindBy(xpath = "//*[text()=' oLPN : ']")
