@@ -94,8 +94,7 @@ public class WMS_LPN_Multi_SKU extends WMS_TestBase {
 			String CompleteSpecs3, String ToteID1, String ToteID2, String CartID, String itemID1, String itemID2)
 			throws InterruptedException, AWTException {
 
-		try {
-			
+					
 		if (!Asn.equals(" ")) {
 			if (CloseBrowser) {
 
@@ -698,11 +697,7 @@ public class WMS_LPN_Multi_SKU extends WMS_TestBase {
 				utilities.closeCurrentWindow();
 					
 		}
-		}
-		catch (Exception e) {
-			System.out.println("Test case failed due to application slowness"+ e);
-			test.log(Status.FAIL, "Test case failed due to application slowness");
-		}
+		
      
 	}
 
