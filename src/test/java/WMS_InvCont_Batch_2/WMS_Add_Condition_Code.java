@@ -178,7 +178,7 @@ try {
 
 			wvMobilePage.clickGoBtn();		
 			// added as part of CD 67
-			wvMobilePage.ConfirmBtn();
+		//	wvMobilePage.ConfirmBtn();
 
 			utilities.closeCurrentWindow();
 

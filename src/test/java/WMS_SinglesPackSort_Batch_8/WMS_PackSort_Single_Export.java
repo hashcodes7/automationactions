@@ -100,18 +100,18 @@ public class WMS_PackSort_Single_Export extends WMS_TestBase {
 			String CompleteSpecs7, String TotUserKey, String TotUserKey2, String LocationKey, String CARTKEY,
 			String CompleteSpecs8, String CompleteSpecs9, String PackStation)
 			throws InterruptedException, AWTException {
-try {
-		if (!OrderNumber.equals(" ")) {
-			if (CloseBrowser) {
+		try {
+			if (!OrderNumber.equals(" ")) {
+				if (CloseBrowser) {
 
-				test = extent.createTest(":::WMS_Packshorts_SINGLES_EXPORT:::");
+					test = extent.createTest(":::WMS_Packshorts_SINGLES_EXPORT:::");
 
-			}
+				}
 
-			CloseBrowser = false;
+				CloseBrowser = false;
 
-			// ...............................browser launched time starts
-			
+				// ...............................browser launched time starts
+
 				long startTime = System.nanoTime();
 
 				String GetTime = utilities.Timer();
@@ -139,7 +139,7 @@ try {
 
 				loginPage.clickLogin();
 				test.log(Status.PASS, "Clicked on Login Button");
-				
+
 				loginPage.resizeWebpage();
 				test.log(Status.PASS, "Window resize");
 
@@ -197,7 +197,7 @@ try {
 
 				}
 
-				orderspage.enterWaveStatergy(" OPS - PO Box and Export Wave ");
+				orderspage.enterWaveStatergy(" OPS - PO Box Wave ");
 				test.log(Status.PASS, "Selected The standard Wave");
 				addSrceenShot("Login", test, Capture);
 
@@ -507,7 +507,7 @@ try {
 
 				taskspage.enterCurrentUser(USERNAME);
 				test.log(Status.PASS, "Entered Username");
-				
+
 				taskspage.clickRefresh();
 				test.log(Status.PASS, "Page refresh completed");
 
@@ -1085,7 +1085,7 @@ try {
 
 				taskspage.enterCurrentUser(USERNAME);
 				test.log(Status.PASS, "Entered Username");
-				
+
 				taskspage.clickRefresh();
 				test.log(Status.PASS, "Page refresh completed");
 
@@ -1868,13 +1868,11 @@ try {
 
 				// .................................total time........................//
 
-			
+			}
+		} catch (Exception e) {
+			System.out.println("Test case failed due to application slowness" + e);
+			test.log(Status.FAIL, "Test case failed due to application slowness");
 		}
-}
-catch (Exception e) {
-	System.out.println("Test case failed due to application slowness"+ e);
-	test.log(Status.FAIL, "Test case failed due to application slowness");
-}
 	}
 
 	@AfterMethod

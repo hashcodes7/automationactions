@@ -1486,11 +1486,11 @@ public class DataProviders implements WMS_GlobalProperties {
 	public static Iterator<Object[]> printing_Journal() throws InvalidFormatException, IOException {
 		 ArrayList<Object[]> myData = new ArrayList<Object[]>();
 	        String filePath = System.getProperty("user.dir") + FILEPATH;
-	        File file = new File(filePath + "\\" + FILENAME);
+	        File file = new File(filePath + "\\" + FILENAMESECOUND);
 	        FileInputStream inputStream = new FileInputStream(file);
 	        @SuppressWarnings("resource")
 	        XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
-	        sheet = workbook.getSheet("Print_Journal");
+	        sheet = workbook.getSheet("P-Jour");
 	        int numOfRows = sheet.getLastRowNum();
 	     		String OrderNumber, CompleteSpecs, TaskGroup, PrintType;
 

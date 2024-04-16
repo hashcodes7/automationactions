@@ -52,8 +52,11 @@ public class WMS_TestBase implements WMS_GlobalProperties {
 		options.addArguments("--incognito");
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
 		capability.setCapability(ChromeOptions.CAPABILITY,options);
-		//System.setProperty(CHROME_KEY,CHROME_PATH);
-		WebDriverManager.chromedriver().setup();
+		System.setProperty(CHROME_KEY,CHROME_PATH);
+		//WebDriverManager.chromedriver().setup();
+		//String CHROME_KEY="webdriver.chrome.driver";
+		//String CHROME_PATH="C:\\Sandip\\chromedriver-win64\\chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver","C:\\Sandip\\chromedriver-win64\\chromedriver.exe");
 		driver= new ChromeDriver(options);
 		driver.manage().window().maximize();
 		

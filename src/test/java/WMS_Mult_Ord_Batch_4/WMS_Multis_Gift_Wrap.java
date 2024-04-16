@@ -195,7 +195,7 @@ try {
 
 				}
 
-				orderspage.enterWaveStatergy(" OPS - Standard Wave ");
+				orderspage.enterWaveStatergy(" OPS - Standard Wave - Special Handling ");
 				test.log(Status.PASS, "Selected The standard Wave");
 				addSrceenShot("Login", test, Capture);
 

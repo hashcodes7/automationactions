@@ -43,7 +43,7 @@ import resources.DataProviders;
 
 
 @Test(enabled = true, groups = { "Rateshop" })
-public class WMS_USFC_Rateshop_Validation extends WMS_TestBase {
+public class WMS_USPR_Rateshop_Validation extends WMS_TestBase {
 
 	WebDriver driver;
 	WMS_LoginPage loginPage;
@@ -90,7 +90,7 @@ public class WMS_USFC_Rateshop_Validation extends WMS_TestBase {
 			batchlistpage = new WMS_BatchListPage(driver);
 			taskspage = new WMS_TasksPage(driver);
 			packStationPage = new WMS_PackStationPage(driver);
-			setReport("USFC_RateShop_Validation");
+			setReport("USPR_RateShop_Validation");
 
 		}
 	}
@@ -102,7 +102,7 @@ public class WMS_USFC_Rateshop_Validation extends WMS_TestBase {
 try {
 		if (!OrderNumber.equals(" ")) {
 			if (CloseBrowser) {
-				test = extent.createTest("::RateShop_Validation_USFC::");
+				test = extent.createTest("::RateShop_Validation_USPR::");
 			}
 
 			CloseBrowser = false;

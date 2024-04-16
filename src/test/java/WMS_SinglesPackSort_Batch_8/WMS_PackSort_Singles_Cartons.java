@@ -1872,9 +1872,10 @@ catch (Exception e) {
 
 				@AfterMethod
 				public void setUpend() {
-					testactions.updateTestRailTestRunStatus("4551686", "pass", "singles export waving, picking, packing",
-							"singles Export order is done");
-
+					/*
+					 * testactions.updateTestRailTestRunStatus("4551686", "pass",
+					 * "singles export waving, picking, packing", "singles Export order is done");
+					 */
 					extent.flush();
 					driver.quit();
 				}

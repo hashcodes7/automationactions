@@ -198,7 +198,7 @@ try {
 
 				}
 
-				orderspage.enterWaveStatergy(" OPS - PO Box and Export Wave ");
+				orderspage.enterWaveStatergy(" OPS - PO Box Wave ");
 				test.log(Status.PASS, "OPS - PO Box and Export Wave");
 				addSrceenShot("Login", test, Capture);
 

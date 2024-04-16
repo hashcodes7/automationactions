@@ -650,7 +650,7 @@ try {
 
 				wvMobilePage.clickPickExcep();
 
-				
+				wvMobilePage.clickConfirmBtn();
 				
 				try {
 

@@ -176,7 +176,8 @@ try {
 			wvMobilePage.clickDamagedBtn();
 
 			// added as part of CD 67
-			wvMobilePage.ConfirmBtn();
+			//Removed confirm btn as part of CD 81
+			//wvMobilePage.ConfirmBtn();
 
 			utilities.closeCurrentWindow();
 

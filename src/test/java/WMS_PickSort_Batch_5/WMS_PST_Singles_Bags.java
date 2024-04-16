@@ -659,6 +659,13 @@ try {
 				} catch (Exception e) {
 
 				}
+				try {
+
+					wvMobilePage.clickConfirmBtn();
+
+				} catch (Exception e) {
+
+				}
 
 				utilities.closeCurrentWindow();
 				// cycle count /////////////////////////////////////////
