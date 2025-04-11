@@ -10,7 +10,7 @@
           <include name="tearDown"/>
           <include name="setUpend"/>
           <include name="CreateSummary"/>
-          <include name="P0_TC_292_E2E_CreateColors_Solid" invocation-numbers="0"/>
+          <include name="P0_TC_292_E2E_CreateColors_Solid"/>
         </methods>
       </class> <!-- E2E_Testcases.TC292_P0_E2E_CreateColors_Solid -->
     </classes>
