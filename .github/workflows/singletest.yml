@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir -p testng
           echo "<?xml version='1.0' encoding='UTF-8'?>" > testng/testng.xml
-echo "https://testng.org/testng-1.0.dtd'>" >> testng/testng.xml
+          echo "https://testng.org/testng-1.0.dtd'>" >> testng/testng.xml
           echo "<suite name='Suite'>" >> testng/testng.xml
           echo "  <test name='Test'>" >> testng/testng.xml
           echo "    <classes>" >> testng/testng.xml
