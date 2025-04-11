@@ -22,7 +22,7 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-maven
     - name: Install dependencies
-      run: mvn install -DskipTests
+      run: mvn install -DskipTests -pl module-containing-test -am
 
     - name: Set up ChromeDriver
       uses: nanasess/setup-chromedriver@v2
@@ -30,4 +30,4 @@ jobs:
         chromedriver-version: 'latest'
 
     - name: Run specific test
-      run: mvn test -Dtest=TC292_P0_E2E_CreateColors_Solid
+      run: mvn test -Dtest=YourTestClassName -pl module-containing-test -am
