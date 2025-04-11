@@ -29,5 +29,5 @@ jobs:
       with:
         chromedriver-version: 'latest'
 
-    - name: Run tests
-      run: mvn test
+    - name: Run specific test
+      run: mvn test -Dtest=TC292_P0_E2E_CreateColors_Solid
