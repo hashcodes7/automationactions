@@ -1,5 +1,4 @@
-name: Run Single TestNG Script
- 
+name: Run Single TestNG Script 
 on:
   workflow_dispatch:
     inputs:
