@@ -1,0 +1,41 @@
+name: Run Single TestNG Script
+ 
+on:
+  workflow_dispatch:
+    inputs:
+      test_class:
+        description: 'Fully-qualified test class name (e.g. tests.TestA)'
+        required: true
+ 
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+ 
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+ 
+      - name: Generate TestNG XML
+        run: |
+          mkdir -p testng
+          echo "<?xml version='1.0' encoding='UTF-8'?>" > testng/testng.xml
+echo "https://testng.org/testng-1.0.dtd'>" >> testng/testng.xml
+          echo "<suite name='Suite'>" >> testng/testng.xml
+          echo "  <test name='Test'>" >> testng/testng.xml
+          echo "    <classes>" >> testng/testng.xml
+          echo "      <class name='${{ github.event.inputs.test_class }}'/>" >> testng/testng.xml
+          echo "    </classes>" >> testng/testng.xml
+          echo "  </test>" >> testng/testng.xml
+          echo "</suite>" >> testng/testng.xml
+ 
+      - name: Resolve Dependencies
+        run: mvn dependency:resolve
+ 
+      - name: Run selected TestNG test
+        run: mvn -Dtestng.xml=testng/testng.xml test
