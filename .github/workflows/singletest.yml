@@ -1,4 +1,5 @@
-name: Run Single TestNG Script 
+name: Run Single TestNG Script
+ 
 on:
   workflow_dispatch:
     inputs:
@@ -20,21 +21,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
  
-      - name: Generate TestNG XML
-        run: |
-          mkdir -p testng
-          echo "<?xml version='1.0' encoding='UTF-8'?>" > testng/testng.xml
-          echo "https://testng.org/testng-1.0.dtd'>" >> testng/testng.xml
-          echo "<suite name='Suite'>" >> testng/testng.xml
-          echo "  <test name='Test'>" >> testng/testng.xml
-          echo "    <classes>" >> testng/testng.xml
-          echo "      <class name='${{ github.event.inputs.test_class }}'/>" >> testng/testng.xml
-          echo "    </classes>" >> testng/testng.xml
-          echo "  </test>" >> testng/testng.xml
-          echo "</suite>" >> testng/testng.xml
- 
-      - name: Resolve Dependencies
+      - name: Resolve dependencies
         run: mvn dependency:resolve
  
-      - name: Run selected TestNG test
-        run: mvn -Dtestng.xml=testng/testng.xml test
+      - name: Run selected test class
+        run: mvn -Dtest=${{ github.event.inputs.test_class }} test
