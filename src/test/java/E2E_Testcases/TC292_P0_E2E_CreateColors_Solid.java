@@ -55,7 +55,7 @@ public class TC292_P0_E2E_CreateColors_Solid extends WMS_TestBase{
 			test.log(Status.INFO, "This Testcase covers TC_292");
 			
 			System.out.println("Browser Launched successfully");
-			test.log(Status.INFO, "Browser Launched successfully");	
+			test.log(Status.INFO, "Browser Launched successfulie");	
 			System.out.println("login to flex PLM application successfully");
 			test.log(Status.INFO, "login to flex PLM application successfully"+URL);
 			
